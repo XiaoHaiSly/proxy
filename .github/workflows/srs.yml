@@ -1,14 +1,6 @@
 name: Build sing-box rule-set (srs)
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'links-domain.txt'
-      - 'links-ipcidr.txt'
-      - 'rule/common.py'
-      - 'rule/build_singbox.py'
-      - '.github/workflows/srs.yml'
   workflow_dispatch:
   schedule:
     - cron: '0 12 * * *'
@@ -46,6 +38,7 @@ jobs:
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
+
         git add ./rule/singbox/domain/*.json ./rule/singbox/domain/*.srs 2>/dev/null || true
         git add ./rule/singbox/ipcidr/*.json ./rule/singbox/ipcidr/*.srs 2>/dev/null || true
 
@@ -53,20 +46,20 @@ jobs:
           echo "No changes to commit"
           exit 0
         fi
+
         git commit -m "Update singbox rule-set"
 
-        # srs.yml 和 mrs.yml 各写各的子目录，但都会推同一个 main 分支，
-        # 并发跑的时候可能撞车（对方先推走了，ref 对不上），rebase 重试几次即可，
-        # 因为改动路径不重叠，rebase 不会有冲突。
         for i in 1 2 3 4 5; do
           git fetch origin main
           if git rebase origin/main && git push origin HEAD:main; then
             echo "push 成功"
             exit 0
           fi
+
           git rebase --abort 2>/dev/null || true
           echo "push 冲突，第 $i 次重试..."
           sleep $(( (RANDOM % 8) + 2 ))
         done
+
         echo "重试多次仍失败"
         exit 1
