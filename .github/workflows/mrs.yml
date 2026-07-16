@@ -1,4 +1,4 @@
-name: Build sing-box rule-set (srs)
+name: Build mihomo rule-set (mrs)
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
     paths:
       - 'links.txt'
       - 'rule/common.py'
-      - 'rule/build_singbox.py'
-      - '.github/workflows/srs.yml'
+      - 'rule/build_mihomo.py'
+      - '.github/workflows/mrs.yml'
   workflow_dispatch:
   schedule:
     - cron: '0 12 * * *'
@@ -19,6 +19,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # mrs.yml 也需要 sing-box：links.txt 里如果混了 srs:/adguard: 类型的输入，
+    # 需要先靠 sing-box decompile/convert 才能拿到中间格式。
+    # 这一步绝不会往 rule/singbox/ 写文件。
     - name: "Setup sing-box"
       env:
         SING_BOX_DEB_URL: "https://github.com/SagerNet/sing-box/releases/download/v1.10.0-alpha.27/sing-box_1.10.0-alpha.27_linux_amd64.deb"
@@ -26,6 +29,17 @@ jobs:
           set -Eeuo pipefail
           wget -O sing-box.deb $SING_BOX_DEB_URL
           sudo dpkg -i sing-box.deb
+
+    - name: "Setup mihomo"
+      run: |
+          set -Eeuo pipefail
+          MIHOMO_TAG=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
+          echo "mihomo 版本: $MIHOMO_TAG"
+          wget -O mihomo.gz "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_TAG}/mihomo-linux-amd64-compatible-${MIHOMO_TAG}.gz"
+          gzip -d mihomo.gz
+          chmod +x mihomo
+          sudo mv mihomo /usr/local/bin/mihomo
+          mihomo -v
 
     - name: Set up Python3
       uses: actions/setup-python@v2
@@ -37,20 +51,20 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas requests pyyaml
 
-    - name: Build singbox rule-set
-      run: python build_singbox.py
+    - name: Build mihomo rule-set
+      run: python build_mihomo.py
       working-directory: ./rule/
 
-    - name: Commit and push rule/singbox
+    - name: Commit and push rule/mihomo
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git add ./rule/singbox/*.json ./rule/singbox/*.srs 2>/dev/null || true
+        git add ./rule/mihomo/*.yaml ./rule/mihomo/*.mrs 2>/dev/null || true
 
         if git diff --staged --quiet; then
           echo "No changes to commit"
           exit 0
         else
-          git commit -m "Update singbox rule-set"
+          git commit -m "Update mihomo rule-set"
           git push
         fi
