@@ -1,0 +1,140 @@
+function main(config) {
+  config = config || {};
+
+  Object.assign(config, {
+    "mixed-port": 7890,
+    "log-level": "error",
+    "ipv6": true,
+    "allow-lan": true,
+    "external-controller": "[::]:9090",
+    "external-ui": "ui",
+    "external-ui-url": "https://gh.445568.xyz/https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip",
+    "unified-delay": true,
+    "tcp-concurrent": true,
+    "find-process-mode": "off",
+    "keep-alive-idle": 300,
+    "keep-alive-interval": 75
+  });
+
+  config["profile"] = {
+    "store-selected": true,
+    "store-fake-ip": true
+  };
+
+  config["tun"] = {
+    "enable": true,
+    "stack": "system",
+    "device": "Nikki",
+    "dns-hijack": ["udp://any:53", "tcp://any:53"],
+    "auto-route": true,
+    "auto-redirect": true,
+    "auto-detect-interface": true,
+    "disable-icmp-forwarding": true
+  };
+
+  config["dns"] = {
+    "enable": true,
+    "ipv6": true,
+    "cache-algorithm": "arc",
+    "listen": "[::]:1053",
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
+    "fake-ip-filter": ["+.lan", "+.local", "rule-set:fakeip-filter", "rule-set:private"],
+    "default-nameserver": ["223.5.5.5", "223.6.6.6"],
+    "nameserver": ["https://dns.alidns.com/dns-query"],
+    "proxy-server-nameserver": ["https://dns.alidns.com/dns-query"],
+    "nameserver-policy": {
+      "rule-set:china-list": ["dns.alidns.com"],
+      "rule-set:proxy-list": ["https://dns.google/dns-query#𝑷𝑹𝑶𝒳𝒀"]
+    }
+  };
+
+  config["hosts"] = {
+    "dns.alidns.com": ["223.5.5.5", "223.6.6.6"],
+    "dns.google": ["8.8.8.8", "8.8.4.4"]
+  };
+
+  config["proxies"] = (config["proxies"] || []).concat([
+    { name: "𝑰𝑷𝒗𝟒 𝑭𝒊𝒓𝒔𝒕", type: "direct", "ip-version": "ipv4-prefer" },
+    { name: "𝑰𝑷𝒗𝟔 𝑭𝒊𝒓𝒔𝒕", type: "direct", "ip-version": "ipv6-prefer" },
+    { name: "𝑫𝒖𝒂𝒍 𝑺𝒕𝒂𝒄𝒌", type: "direct" }
+  ]);
+
+  const HEALTH_CHECK = { enable: true, interval: 300, lazy: false, url: "https://www.gstatic.com/generate_204", tolerance: 80, timeout: 5000 };
+
+  const SELECT_T = { type: "select", ...HEALTH_CHECK, "include-all": true };
+  const AUTO_T = { type: "url-test", ...HEALTH_CHECK, hidden: true, "include-all": true };
+  const FALLBACK_T = { type: "fallback", ...HEALTH_CHECK, hidden: true, "include-all": true };
+
+  const OT_T = "^(?i)(?!.*(香港|Hong Kong|Taiwan|台湾|TW|Japan|日本|JP|Singapore|新加坡|SG|America|美|US|United States|America|Korea|韩国|KR|UK|英国|United Kingdom|France|法国|\\bFR\\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|剩余|频道)).*$";
+
+  config["proxy-groups"] = [
+    { name: "𝑯𝑲 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: "(?i)港|HK|Hong Kong", proxies: ["𝑯𝑲-𝑨𝑼𝑻𝑶", "𝑯𝑲-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png" },
+    { name: "𝑱𝑷 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: "(?i)日本|东京|大阪|JP|Japan", proxies: ["𝑱𝑷-𝑨𝑼𝑻𝑶", "𝑱𝑷-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png" },
+    { name: "𝑺𝑮 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: "(?i)新加坡|坡|SG|狮城|Singapore", proxies: ["𝑺𝑮-𝑨𝑼𝑻𝑶", "𝑺𝑮-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png" },
+    { name: "𝑼𝑺 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: "(?i)美|US|United States|America", proxies: ["𝑼𝑺-𝑨𝑼𝑻𝑶", "𝑼𝑺-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png" },
+    { name: "𝑬𝑼 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: "(?i)UK|英国|United Kingdom|France|法国|\\bFR\\b|Germany|德国|DE|Netherlands|荷兰|NL", proxies: ["𝑬𝑼-𝑨𝑼𝑻𝑶", "𝑬𝑼-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/EuropeanUnion(2).png" },
+    { name: "𝑶𝑻 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: OT_T, proxies: ["𝑶𝑻-𝑨𝑼𝑻𝑶", "𝑶𝑻-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png" },
+
+    { name: "𝑨𝑰-𝑶𝒏𝒍𝒚", type: "select", ...HEALTH_CHECK, proxies: ["𝑱𝑷 𝑵𝒐𝒅𝒆", "𝑺𝑮 𝑵𝒐𝒅𝒆", "𝑯𝑲 𝑵𝒐𝒅𝒆", "𝑼𝑺 𝑵𝒐𝒅𝒆", "𝑬𝑼 𝑵𝒐𝒅𝒆", "𝑶𝑻 𝑵𝒐𝒅𝒆"], icon: "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png" },
+    { name: "𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎", type: "select", ...HEALTH_CHECK, proxies: ["𝑱𝑷 𝑵𝒐𝒅𝒆", "𝑺𝑮 𝑵𝒐𝒅𝒆", "𝑯𝑲 𝑵𝒐𝒅𝒆", "𝑼𝑺 𝑵𝒐𝒅𝒆", "𝑬𝑼 𝑵𝒐𝒅𝒆", "𝑶𝑻 𝑵𝒐𝒅𝒆"], icon: "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/Telegrampremium.png" },
+    { name: "𝑪𝑯𝑰𝑵𝑨", type: "select", ...HEALTH_CHECK, proxies: ["𝑫𝒖𝒂𝒍 𝑺𝒕𝒂𝒄𝒌", "𝑰𝑷𝒗𝟒 𝑭𝒊𝒓𝒔𝒕", "𝑰𝑷𝒗𝟔 𝑭𝒊𝒓𝒔𝒕"], url: "https://connectivitycheck.platform.hicloud.com/generate_204", interval: 600, lazy: false, icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China_Map.png" },
+    { name: "𝑷𝑹𝑶𝑿𝒀", type: "select", ...HEALTH_CHECK, proxies: ["𝑱𝑷 𝑵𝒐𝒅𝒆", "𝑺𝑮 𝑵𝒐𝒅𝒆", "𝑯𝑲 𝑵𝒐𝒅𝒆", "𝑼𝑺 𝑵𝒐𝒅𝒆", "𝑬𝑼 𝑵𝒐𝒅𝒆", "𝑶𝑻 𝑵𝒐𝒅𝒆"], icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/World_Map.png" },
+
+    { name: "𝑯𝑲-𝑨𝑼𝑻𝑶", ...AUTO_T, filter: "(?i)港|HK|Hong Kong" },
+    { name: "𝑯𝑲-𝑭𝑨𝑳𝑳", ...FALLBACK_T, filter: "(?i)港|HK|Hong Kong" },
+    { name: "𝑱𝑷-𝑨𝑼𝑻𝑶", ...AUTO_T, filter: "(?i)日本|东京|大阪|JP|Japan" },
+    { name: "𝑱𝑷-𝑭𝑨𝑳𝑳", ...FALLBACK_T, filter: "(?i)日本|东京|大阪|JP|Japan" },
+    { name: "𝑺𝑮-𝑨𝑼𝑻𝑶", ...AUTO_T, filter: "(?i)新加坡|坡|SG|狮城|Singapore" },
+    { name: "𝑺𝑮-𝑭𝑨𝑳𝑳", ...FALLBACK_T, filter: "(?i)新加坡|坡|SG|Singapore" },
+    { name: "𝑼𝑺-𝑨𝑼𝑻𝑶", ...AUTO_T, filter: "(?i)美|US|United States|America" },
+    { name: "𝑼𝑺-𝑭𝑨𝑳𝑳", ...FALLBACK_T, filter: "(?i)美|US|United States|America" },
+    { name: "𝑬𝑼-𝑨𝑼𝑻𝑶", ...AUTO_T, filter: "(?i)UK|英国|United Kingdom|France|法国|\\bFR\\b|Germany|德国|DE|Netherlands|荷兰|NL" },
+    { name: "𝑬𝑼-𝑭𝑨𝑳𝑳", ...FALLBACK_T, filter: "(?i)UK|英国|United Kingdom|France|法国|\\bFR\\b|Germany|德国|DE|Netherlands|荷兰|NL" },
+    { name: "𝑶𝑻-𝑨𝑼𝑻𝑶", ...AUTO_T, filter: OT_T },
+    { name: "𝑶𝑻-𝑭𝑨𝑳𝑳", ...FALLBACK_T, filter: OT_T }
+  ];
+
+  const bDomain = { type: "http", behavior: "domain", format: "mrs", interval: 86400 };
+  const bIp = { type: "http", behavior: "ipcidr", format: "mrs", interval: 86400 };
+
+  config["rule-providers"] = {
+    "private": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs", path: "./ruleset/private.mrs" },
+    "private_ip": { ...bIp, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs", path: "./ruleset/private_ip.mrs" },
+    "telegram": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs", path: "./ruleset/telegram.mrs" },
+    "telegram_ip": { ...bIp, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs", path: "./ruleset/telegram_ip.mrs" },
+    "google": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs", path: "./ruleset/google.mrs" },
+    "google_ip": { ...bIp, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs", path: "./ruleset/google_ip.mrs" },
+    "ai": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs", path: "./ruleset/ai.mrs" },
+    "github": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs", path: "./ruleset/github.mrs" },
+    "fakeip-filter": { ...bDomain, url: "https://gh.445568.xyz/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs", path: "./ruleset/fakeip-filter.mrs" },
+    "STUN": { ...bDomain, url: "https://testingcf.jsdelivr.net/gh/Kwisma/rules@main/rules/mihomo/STUN/STUN_Domain.mrs", path: "./ruleset/STUN.mrs" },
+    "cn_ip": { ...bIp, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs", path: "./ruleset/cn_ip.mrs" },
+    "china-list": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs", path: "./ruleset/china-list.mrs" },
+    "proxy-list": { ...bDomain, url: "https://gh.445568.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs", path: "./ruleset/proxy-list.mrs" }
+  };
+
+  config["rules"] = [
+    "DOMAIN-SUFFIX,xyz,𝑪𝑯𝑰𝑵𝑨",
+    "DOMAIN,a.nel.cloudflare.com,𝑪𝑯𝑰𝑵𝑨",
+    "DOMAIN,challenges.cloudflare.com,𝑪𝑯𝑰𝑵𝑨",
+    "DOMAIN,stun.cloudflare.com,𝑪𝑯𝑰𝑵𝑨",
+    "DOMAIN,static.cloudflareinsights.com,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,STUN,REJECT-DROP",
+    "RULE-SET,fakeip-filter,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,private,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,private_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve",
+    "RULE-SET,ai,𝑨𝑰-𝑶𝒏𝒍𝒚",
+    "RULE-SET,github,𝑷𝑹𝑶𝑿𝒀",
+    "RULE-SET,google,𝑷𝑹𝑶𝑿𝒀",
+    "RULE-SET,google_ip,𝑷𝑹𝑶𝑿𝒀,no-resolve",
+    "RULE-SET,telegram,𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎",
+    "RULE-SET,telegram_ip,𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎,no-resolve",
+    "RULE-SET,proxy-list,𝑷𝑹𝑶𝑿𝒀",
+    "RULE-SET,china-list,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,cn_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve",
+    "MATCH,𝑷𝑹𝑶𝑿𝒀"
+  ];
+
+  return config;
+}
