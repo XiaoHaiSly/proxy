@@ -1,6 +1,4 @@
-# 直接下载、不做任何转换的文件链接，一行一个
-# 文件名取自链接本身（URL 最后一段），下载后原样放进 geo-data/geodata/
-https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
-https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
-https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
-https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb
+GeoIP https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
+GeoSite https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+ASN https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+MMDB https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb
