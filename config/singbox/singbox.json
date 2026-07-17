@@ -209,7 +209,7 @@
         "tag": "openai_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohai-proxy.445568.xyz/rule/singbox/ai/ai_Domain.srs",
+        "url": "https://xiaohai-proxy.445568.xyz/rule/singbox/Ai/Ai_Domain.srs",
         "download_detour": "Direct"
       },
       {
