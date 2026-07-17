@@ -1,16 +1,3 @@
-"""
-只负责生成 sing-box 格式 (json + srs)，写入 rule/singbox/domain/ 和 rule/singbox/ipcidr/。
-由 .github/workflows/srs.yml 独立触发运行，不涉及 mihomo。
-
-- ../links-domain.txt  里的链接只提取 domain/domain_suffix/domain_keyword/domain_regex
-  -> 写到 singbox/domain/
-- ../links-ipcidr.txt  里的链接只提取 ip_cidr/source_ip_cidr
-  -> 写到 singbox/ipcidr/
-一条链接如果混了两类规则，放进哪个文件就只取对应那部分，另一部分会被忽略并打印提示。
-
-- ../links-mixed.txt   不预设类型，自动检测：纯域名只写 domain/，纯IP只写 ipcidr/，
-  两者都有就两边各写一份（同名文件分别出现在 domain/ 和 ipcidr/ 下）。
-"""
 import os
 import concurrent.futures
 import tempfile
@@ -48,8 +35,7 @@ def build_one(name_link, work_dir, output_dir, keep_fields, category_label):
 
         filtered, dropped = common.filter_unified(unified, keep_fields)
         if dropped:
-            print(f"[提示] {name} ({category_label}): 忽略了不属于此分类的字段 {dropped}，"
-                  f"如需保留请把此链接也加进对应的 links-*.txt")
+            print(f"[提示] {name} ({category_label}): 忽略了不属于此分类的字段 {dropped}，如需保留请把此链接也加进对应的 links-*.txt")
         if not filtered:
             print(f"[跳过] {link}：过滤后没有属于 {category_label} 分类的规则")
             return
@@ -112,4 +98,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
