@@ -1,0 +1,12 @@
+# ============================================================
+# 混合订阅专用：不用你手动声明这条链接是域名还是IP，脚本会自动检测内容：
+#   - 纯域名 (domain/domain_suffix/domain_keyword/domain_regex) -> 只写 domain/
+#   - 纯IP   (ip_cidr/source_ip_cidr)                            -> 只写 ipcidr/
+#   - 两者都有                                                    -> domain/ 和 ipcidr/ 各写一份同名文件
+# srs.yml -> rule/singbox/{domain,ipcidr}/    mrs.yml -> rule/mihomo/{domain,ipcidr}/
+#
+# 写法同 links-domain.txt / links-ipcidr.txt: [自定义名字 ]<链接>，支持同样的前缀协议。
+# 以 # 开头的行是注释，会被忽略。目前是空的，按需自己加，例如:
+# https://example.com/some-mixed-subscription.txt
+# MyMixed https://example.com/some-mixed-subscription.yaml
+# ============================================================
