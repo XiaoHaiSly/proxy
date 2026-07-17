@@ -102,17 +102,17 @@ _default_mrs_domain: &d {type: http, behavior: domain, format: mrs, interval: 86
 _default_mrs_ip: &i {type: http, behavior: ipcidr, format: mrs, interval: 86400}
 
 rule-providers:
-  private: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/private/private_Domain.mrs', path: ./ruleset/private.mrs}
-  private_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/private/private_IP.mrs', path: ./ruleset/private_ip.mrs}
-  telegram: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/telegram/telegram_Domain.mrs', path: ./ruleset/telegram.mrs}
-  telegram_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/telegram/telegram_IP.mrs', path: ./ruleset/telegram_ip.mrs}  
-  google: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/google/google_Domain.mrs', path: ./ruleset/google.mrs}
-  google_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/google/google_IP.mrs', path: ./ruleset/google_ip.mrs}
-  ai: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/Ai/Ai_Domain.mrs', path: ./ruleset/ai.mrs}
-  github: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/github/github_Domain.mrs', path: ./ruleset/github.mrs}
-  cn_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/china/china_IP.mrs', path: ./ruleset/cn_ip.mrs}   
-  cn: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/china/china_Domain.mrs', path: ./ruleset/china-list.mrs}
-  proxy: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rule/mihomo/proxy/proxy_Domain.mrs', path: ./ruleset/proxy-list.mrs}
+  private: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/private/private_Domain.mrs', path: ./ruleset/private.mrs}
+  private_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/private/private_IP.mrs', path: ./ruleset/private_ip.mrs}
+  telegram: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/telegram/telegram_Domain.mrs', path: ./ruleset/telegram.mrs}
+  telegram_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/telegram/telegram_IP.mrs', path: ./ruleset/telegram_ip.mrs}  
+  google: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/google/google_Domain.mrs', path: ./ruleset/google.mrs}
+  google_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/google/google_IP.mrs', path: ./ruleset/google_ip.mrs}
+  ai: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/Ai/Ai_Domain.mrs', path: ./ruleset/ai.mrs}
+  github: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/github/github_Domain.mrs', path: ./ruleset/github.mrs}
+  cn_ip: {<<: *i, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/china/china_IP.mrs', path: ./ruleset/cn_ip.mrs}   
+  cn: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/china/china_Domain.mrs', path: ./ruleset/china-list.mrs}
+  proxy: {<<: *d, url: 'https://xiaohai-proxy.445568.xyz/rules/mihomo/proxy/proxy_Domain.mrs', path: ./ruleset/proxy-list.mrs}
    
 rules: 
   - DOMAIN-SUFFIX,xyz,𝑪𝑯𝑰𝑵𝑨
