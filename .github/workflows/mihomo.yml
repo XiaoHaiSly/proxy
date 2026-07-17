@@ -51,12 +51,12 @@ jobs:
       run: python build_mihomo.py
       working-directory: ./script/
 
-    - name: Commit and push rule/mihomo
+    - name: Commit and push rules/mihomo + geo-data/mihomo
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
 
-        git add ./rule/mihomo
+        git add ./rules/mihomo ./geo-data/mihomo
 
         if git diff --staged --quiet; then
           echo "No changes to commit"

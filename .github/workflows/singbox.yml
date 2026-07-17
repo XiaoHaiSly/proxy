@@ -40,12 +40,12 @@ jobs:
       run: python build_singbox.py
       working-directory: ./script/
 
-    - name: Commit and push rule/singbox
+    - name: Commit and push rules/singbox + geo-data/singbox
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
 
-        git add ./rule/singbox
+        git add ./rules/singbox ./geo-data/singbox
 
         if git diff --staged --quiet; then
           echo "No changes to commit"
