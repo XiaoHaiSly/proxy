@@ -8,6 +8,7 @@ LINKS_FILES = [
     "../links/links-domain.txt",
     "../links/links-ipcidr.txt",
     "../links/links-mixed.txt",
+    "../links/links-meta.txt",
 ]
 
 OUTPUT_ROOT = "../rule/singbox"
