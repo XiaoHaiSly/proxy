@@ -60,7 +60,6 @@ dns:
   fake-ip-filter:
     - "+.lan"
     - "+.local"
-    - "rule-set:fakeip-filter"
     - "rule-set:private"
   default-nameserver:
     - 223.5.5.5
