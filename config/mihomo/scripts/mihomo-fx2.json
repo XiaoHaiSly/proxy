@@ -106,7 +106,7 @@ function main(config) {
     "telegram_ip": { ...bIp, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/telegram/telegram_IP.mrs", path: "./ruleset/telegram_ip.mrs" },
     "google": { ...bDomain, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/google/google_Domain.mrs", path: "./ruleset/google.mrs" },
     "google_ip": { ...bIp, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/google/google_IP.mrs", path: "./ruleset/google_ip.mrs" },
-    "ai": { ...bDomain, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/ai/ai_Domain.mrs", path: "./ruleset/ai.mrs" },
+    "ai": { ...bDomain, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/Ai/Ai_Domain.mrs", path: "./ruleset/ai.mrs" },
     "github": { ...bDomain, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/github/github_Domain.mrs", path: "./ruleset/github.mrs" },
     "cn_ip": { ...bIp, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/china/china_IP.mrs", path: "./ruleset/cn_ip.mrs" },
     "china-list": { ...bDomain, url: M + "https://xiaohai-proxy.445568.xyz/rule/mihomo/china/china_Domain.mrs", path: "./ruleset/china-list.mrs" },
