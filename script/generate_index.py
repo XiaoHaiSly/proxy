@@ -218,7 +218,7 @@ def count_files_recursive(dir_path):
 
 
 def breadcrumb_html(rel_parts):
-    segs = ['<a href="/">𝘙𝘶𝘭𝘦 𝘍𝘦𝘦𝘥</a>' if rel_parts else '<span>Rule Feed</span>']
+    segs = ['<a href="/">𝘙𝘶𝘭𝘦 𝘍𝘦𝘦𝘥</a>' if rel_parts else '<span>𝘙𝘶𝘭𝘦 𝘍𝘦𝘦𝘥</span>']
     acc = ""
     for i, part in enumerate(rel_parts):
         acc += part + "/"
