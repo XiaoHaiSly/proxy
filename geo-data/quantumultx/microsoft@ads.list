@@ -1,0 +1,10 @@
+HOST,copilot-telemetry-service.githubusercontent.com
+HOST,copilot-telemetry.githubusercontent.com
+HOST-SUFFIX,bingads.com
+HOST-SUFFIX,browser.events.data.msn.cn
+HOST-SUFFIX,browser.events.data.msn.com
+HOST-SUFFIX,clarity.ms
+HOST-SUFFIX,collector.github.com
+HOST-SUFFIX,microsoftads.com
+HOST-SUFFIX,msads.net
+HOST-SUFFIX,nelreports.net

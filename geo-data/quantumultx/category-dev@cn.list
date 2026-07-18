@@ -1,0 +1,14 @@
+HOST,cdn.ampproject.org
+HOST,crashlyticsreports-pa.googleapis.com
+HOST,download.visualstudio.microsoft.com
+HOST,firebase-settings.crashlytics.com
+HOST,update.crashlytics.com
+HOST-SUFFIX,cdn.jetbrains.com
+HOST-SUFFIX,jetbrains.com.cn
+HOST-SUFFIX,microsoftreactor.cn
+HOST-SUFFIX,microsoftreactor.com.cn
+HOST-SUFFIX,reactorms.com.cn
+HOST-SUFFIX,researchkit.cn
+HOST-SUFFIX,researchkit.com.cn
+HOST-SUFFIX,swiftui.cn
+HOST-SUFFIX,swiftui.com.cn
