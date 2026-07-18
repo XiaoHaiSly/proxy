@@ -1,0 +1,7 @@
+HOST,c.pki.goog
+HOST,crl.pki.goog
+HOST,crls.pki.goog
+HOST,i.pki.goog
+HOST,o.pki.goog
+HOST,ocsp.pki.goog
+HOST,pki-goog.l.google.com

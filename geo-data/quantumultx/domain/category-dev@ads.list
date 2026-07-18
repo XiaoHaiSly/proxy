@@ -1,0 +1,12 @@
+HOST,copilot-telemetry-service.githubusercontent.com
+HOST,copilot-telemetry.githubusercontent.com
+HOST-SUFFIX,analytics.cloud.unity3d.com
+HOST-SUFFIX,api2.amplitude.com
+HOST-SUFFIX,cdp.cloud.unity3d.com
+HOST-SUFFIX,collector.github.com
+HOST-SUFFIX,config.uca.cloud.unity3d.com
+HOST-SUFFIX,iads.unity3d.com
+HOST-SUFFIX,perf-events.cloud.unity3d.com
+HOST-SUFFIX,perf.cloud.unity3d.com
+HOST-SUFFIX,prd-lender.cdp.internal.unity3d.com
+HOST-SUFFIX,unityads.unity3d.com
