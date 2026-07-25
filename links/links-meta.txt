@@ -1392,6 +1392,7 @@ redis https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosit
 redotpay https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/redotpay.yaml
 redtube https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/redtube.yaml
 regru https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/regru.yaml
+remnawave https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/remnawave.yaml
 renren https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/renren.yaml
 reurl https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/reurl.yaml
 reuters https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/reuters.yaml
