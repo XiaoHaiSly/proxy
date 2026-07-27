@@ -74,6 +74,7 @@ HOST,ads-sg.tiktok.com
 HOST,ads-video-al.xhscdn.com
 HOST,ads-video-qc.xhscdn.com
 HOST,ads.95516.com
+HOST,ads.adfunlink.com
 HOST,ads.auctions.yahoo.com
 HOST,ads.cup.com.cn
 HOST,ads.google.cn
@@ -131,6 +132,7 @@ HOST,adstudio.spotify.com
 HOST,adtago.s3.amazonaws.com
 HOST,adtech.yahooinc.com
 HOST,adtrack.quark.cn
+HOST,adtracker.adfunlink.com
 HOST,adtracker.medproad.com
 HOST,adui.tg.meitu.com
 HOST,adv-api.shenshiads.com
@@ -424,7 +426,6 @@ HOST,ii.gdt.qq.com
 HOST,image-ad.sm.cn
 HOST,image.hpplay.cn
 HOST,images.outbrainimg.com
-HOST,images.pinduoduo.com
 HOST,imdns.hpplay.cn
 HOST,img-c.heytapimage.com
 HOST,img-x.jd.com
@@ -879,7 +880,6 @@ HOST,yk-ssp.ad.youku.com
 HOST,ykad-data.cp31.ott.cibntv.net
 HOST,ykad-data.youku.com
 HOST,ykad-gateway.youku.com
-HOST,youku-acs.m.taobao.com
 HOST,ytx-file.110route.cn
 HOST,zeus.ad.xiaomi.com
 HOST,zhihu-web-analytics.zhihu.com
