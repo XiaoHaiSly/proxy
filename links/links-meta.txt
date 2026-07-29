@@ -1184,6 +1184,7 @@ nationalgeographic https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/me
 naver https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/naver.yaml
 nbcuniversal https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nbcuniversal.yaml
 neowin https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/neowin.yaml
+netcraze https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netcraze.yaml
 netcup https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netcup.yaml
 netease https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netease.yaml
 netease@!cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netease@!cn.yaml
