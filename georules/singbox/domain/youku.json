@@ -2,6 +2,11 @@
   "version": 2,
   "rules": [
     {
+      "domain": [
+        "ykimg.alicdn.com"
+      ]
+    },
+    {
       "domain_suffix": [
         "9xsecndns.cn",
         "ad.api.3g.youku.com",
@@ -15,7 +20,6 @@
         "h-adashx.ut.youku.com",
         "kumiao.com",
         "lstat.youku.com",
-        "mmstat.com",
         "mobilemsg.youku.com",
         "msg.youku.com",
         "p-log.ykimg.com",
