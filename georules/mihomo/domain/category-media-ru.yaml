@@ -1,8 +1,10 @@
 payload:
 - +.1917live.red
 - +.1prime.ru
+- +.72.ru
 - +.actualidad-rt.com
 - +.ahilesva.info
+- +.amic.ru
 - +.arabicrt.ru
 - +.arctic.ru
 - +.artel.watch
@@ -23,11 +25,13 @@ payload:
 - +.dert.site
 - +.dert.tech
 - +.drobbox.pro
+- +.e1.ru
 - +.eadaily.com
 - +.eadaily.info
 - +.eadaily.net
 - +.eadaily.org
 - +.eadaily.su
+- +.ekat.ru
 - +.es-rt.com
 - +.esrt.online
 - +.esrt.press
@@ -40,12 +44,11 @@ payload:
 - +.freede.tech
 - +.freedert.online
 - +.gatewaytorussia.ru
+- +.gazeta.ru
 - +.gazetarussa.com.br
 - +.green-box-tv.com
 - +.gw2ru.com
 - +.inosmi.ru
-- +.ixbt.com
-- +.ixbt.site
 - +.jinrieluosi.cn
 - +.kanzlerdaddy.ru
 - +.khangar.net
@@ -57,6 +60,7 @@ payload:
 - +.premiumlive.site
 - +.pressria.ru
 - +.radiosputnik.ru
+- +.rambler.ru
 - +.rbth.com
 - +.ria.ru
 - +.romanovs100.com

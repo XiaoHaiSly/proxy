@@ -293,6 +293,7 @@ payload:
 - +.at.ua
 - +.atomyze.tech
 - +.attachmy.com
+- +.autoru.me
 - +.aviasales.com
 - +.avito.st
 - +.avs.io
@@ -325,11 +326,13 @@ payload:
 - +.cert-gib.com
 - +.chipcore.com
 - +.chizhik.club
+- +.cian.site
 - +.ciciq.net
 - +.clck.yandex.ru
 - +.clickstream.sberbank.ru
 - +.cloudru.cn
 - +.clstorage.net
+- +.cm.expert
 - +.codeseason.by
 - +.comss.club
 - +.comss.info
@@ -380,12 +383,14 @@ payload:
 - +.drweb.fr
 - +.drweb.kz
 - +.drweb.uz
+- +.durovscode.com
 - +.e.mindbox.ru
 - +.eadaily.com
 - +.eadaily.info
 - +.eadaily.net
 - +.eadaily.org
 - +.eaptechka.online
+- +.edu22.info
 - +.eligens.cl
 - +.eligens.com.br
 - +.eligens.io
@@ -450,6 +455,7 @@ payload:
 - +.goicq.org
 - +.gorzdrav.org
 - +.goup.ai
+- +.gramotei.online
 - +.green-box-tv.com
 - +.greywallpass.com
 - +.group-ib.ae
@@ -512,7 +518,13 @@ payload:
 - +.it-territory.com
 - +.ivicdn.tv
 - +.ixbt.com
+- +.ixbt.games
+- +.ixbt.market
+- +.ixbt.media
+- +.ixbt.pro
+- +.ixbt.shop
 - +.ixbt.site
+- +.ixbt.video
 - +.jinrieluosi.cn
 - +.jivo.chat
 - +.jivochat.co.in
@@ -587,6 +599,7 @@ payload:
 - +.medsi.pro
 - +.megafon.com
 - +.megamarket.tech
+- +.mel.fm
 - +.memealerts.com
 - +.meteofor.com
 - +.meteofor.st
@@ -632,6 +645,7 @@ payload:
 - +.netcraze.link
 - +.netcraze.pro
 - +.netmonet.co
+- +.netschool.website
 - +.ngenix.net
 - +.noticias-rt.com
 - +.notimundo.press
@@ -651,6 +665,7 @@ payload:
 - +.okkoapi.tv
 - +.okl.lt
 - +.okolo.app
+- +.opennet.dev
 - +.oskelly.co
 - +.ostin.com
 - +.ozon.by
@@ -681,6 +696,7 @@ payload:
 - +.pobeda.page
 - +.polza.ai
 - +.popmechanic.io
+- +.poudobnee.com
 - +.premier.one
 - +.premiumlive.site
 - +.prod-my.games
@@ -790,6 +806,7 @@ payload:
 - +.sberbank.com
 - +.sbercloud.tech
 - +.sbermarketing.ru
+- +.seclab.lat
 - +.selcdn.net
 - +.selectel.academy
 - +.selectel.blog
@@ -835,6 +852,7 @@ payload:
 - +.t-tech.team
 - +.t.finance
 - +.t1.cloud
+- +.tak-pravilno.com
 - +.tamtam.chat
 - +.tarantool.io
 - +.target.my.com
@@ -947,6 +965,7 @@ payload:
 - +.vkuservideo.net
 - +.vkworkspace.kz
 - +.vmailru.net
+- +.volganet.net
 - +.vscale.blog
 - +.vscale.io
 - +.vtb-direct.com
@@ -1070,9 +1089,11 @@ payload:
 - +.yango.taxi
 - +.yango.tech
 - +.yangofellowship.com
+- +.yaplakal.com
 - +.yastat.net
 - +.yastatic.net
 - +.yclients.com
+- +.yndx.net
 - +.youla.io
 - +.yourgood.app
 - +.zvuk-b2b.com

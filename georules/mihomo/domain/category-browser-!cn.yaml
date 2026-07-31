@@ -1,5 +1,6 @@
 payload:
 - mozilla-ohttp.fastly-edge.com
+- mozilla.map.fastly.net
 - +.basilisk-browser.org
 - +.brave.com
 - +.bromite.org

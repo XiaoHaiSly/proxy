@@ -5,6 +5,7 @@ payload:
 - incoming.telemetry.mozilla.org
 - mdn.mozillademos.org
 - mozilla-ohttp.fastly-edge.com
+- mozilla.map.fastly.net
 - +.allizom.net
 - +.allizom.org
 - +.bugzilla.org

@@ -1,4 +1,5 @@
 payload:
+- ykimg.alicdn.com
 - +.9xsecndns.cn
 - +.ad.api.3g.youku.com
 - +.ad.api.mobile.youku.com
@@ -11,7 +12,6 @@ payload:
 - +.h-adashx.ut.youku.com
 - +.kumiao.com
 - +.lstat.youku.com
-- +.mmstat.com
 - +.mobilemsg.youku.com
 - +.msg.youku.com
 - +.p-log.ykimg.com
