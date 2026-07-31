@@ -2,6 +2,7 @@ HOST,account-cn.alibabacloud.com
 HOST,api.alibabacloud.com
 HOST,cn.alibabacloud.com
 HOST,status.alibabacloud.com
+HOST,ykimg.alicdn.com
 HOST-SUFFIX,11222.cn
 HOST-SUFFIX,1688.com
 HOST-SUFFIX,25pp.com
@@ -51,6 +52,7 @@ HOST-SUFFIX,alibaba-inc.com
 HOST-SUFFIX,alibaba.com
 HOST-SUFFIX,alibabacapital.com
 HOST-SUFFIX,alibabachengdun.com
+HOST-SUFFIX,alibabachengdun.net
 HOST-SUFFIX,alibabacloud.co.in
 HOST-SUFFIX,alibabacloud.com
 HOST-SUFFIX,alibabacloud.com.au
@@ -62,6 +64,8 @@ HOST-SUFFIX,alibabacorp.com
 HOST-SUFFIX,alibabadesign.com
 HOST-SUFFIX,alibabadns.com
 HOST-SUFFIX,alibabadoctor.com
+HOST-SUFFIX,alibabafonts.com
+HOST-SUFFIX,alibabafoundation.com
 HOST-SUFFIX,alibabafuturehotel.com
 HOST-SUFFIX,alibabagroup.com
 HOST-SUFFIX,alibabapictures.com
@@ -137,6 +141,7 @@ HOST-SUFFIX,alog.umengcloud.com
 HOST-SUFFIX,alogs.umeng.com
 HOST-SUFFIX,alogus.umeng.com
 HOST-SUFFIX,alyms.cn
+HOST-SUFFIX,alysm.cn
 HOST-SUFFIX,amap.com
 HOST-SUFFIX,amap.net
 HOST-SUFFIX,amapauto.com
@@ -211,6 +216,7 @@ HOST-SUFFIX,etao.com
 HOST-SUFFIX,fcapp.run
 HOST-SUFFIX,feizhu.cn
 HOST-SUFFIX,feizhu.com
+HOST-SUFFIX,fengniaojipei.net
 HOST-SUFFIX,fliggy.com
 HOST-SUFFIX,fliggy.hk
 HOST-SUFFIX,fourier.taobao.com
@@ -232,6 +238,8 @@ HOST-SUFFIX,hemaos.com
 HOST-SUFFIX,hemashare.cn
 HOST-SUFFIX,hichina.com
 HOST-SUFFIX,hupan.com
+HOST-SUFFIX,hzchengdun.com
+HOST-SUFFIX,hzchengdun.net
 HOST-SUFFIX,ialicdn.com
 HOST-SUFFIX,ica-alliance.org
 HOST-SUFFIX,iconfont.cn
@@ -382,6 +390,7 @@ HOST-SUFFIX,taobao.org
 HOST-SUFFIX,taobaocdn.com
 HOST-SUFFIX,taobizhong.com
 HOST-SUFFIX,taopiaopiao.com
+HOST-SUFFIX,taotian.com
 HOST-SUFFIX,tb.cn
 HOST-SUFFIX,tbcache.com
 HOST-SUFFIX,tbcdn.cn
@@ -392,6 +401,7 @@ HOST-SUFFIX,teambition.net
 HOST-SUFFIX,teambitionapis.com
 HOST-SUFFIX,tmall
 HOST-SUFFIX,tmall.com
+HOST-SUFFIX,tmall.hk
 HOST-SUFFIX,tmall.ru
 HOST-SUFFIX,tmalltv.com
 HOST-SUFFIX,tmjl.ai
@@ -427,6 +437,8 @@ HOST-SUFFIX,xiami.fm
 HOST-SUFFIX,xiami.net
 HOST-SUFFIX,xin.xin
 HOST-SUFFIX,xinlingshou.cn
+HOST-SUFFIX,xixikf.cn
+HOST-SUFFIX,yisou.com
 HOST-SUFFIX,yk-ssp.ad.youku.com
 HOST-SUFFIX,ykad-data.youku.com
 HOST-SUFFIX,ykimg.com
