@@ -492,6 +492,8 @@ HOST,sync.itunes.apple.com
 HOST,tac.googleapis.com
 HOST,tf-feedback.itunes.apple.com
 HOST,tj-pod1-smp-device.apple.com
+HOST,tj-pod2-smp-device.apple.com
+HOST,tj-pod3-smp-device.apple.com
 HOST,tools.google.com
 HOST,tp.louisvuitton.com
 HOST,universal-activity-service.itunes.apple.com
