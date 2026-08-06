@@ -2,12 +2,6 @@
   "version": 2,
   "rules": [
     {
-      "domain": [
-        "nab.demdex.net",
-        "nationalaustraliaban.tt.omtrdc.net"
-      ]
-    },
-    {
       "domain_suffix": [
         "53world.com",
         "53worldsweeps.com",
