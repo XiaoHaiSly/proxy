@@ -5,7 +5,6 @@ HOST-SUFFIX,fastly.io
 HOST-SUFFIX,fastly.net
 HOST-SUFFIX,fastlylabs.com
 HOST-SUFFIX,fastlylb.net
-HOST-SUFFIX,zencdn.net
 IP-CIDR,103.244.50.0/24
 IP-CIDR,103.245.222.0/23
 IP-CIDR,103.245.224.0/24

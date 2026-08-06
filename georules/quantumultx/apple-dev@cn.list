@@ -1,3 +1,13 @@
+HOST,cdn-cn.apple-mapkit.com
+HOST,cdn-cn1.apple-mapkit.com
+HOST,cdn-cn2.apple-mapkit.com
+HOST,cdn-cn3.apple-mapkit.com
+HOST,cdn-cn4.apple-mapkit.com
+HOST,cdn.apple-mapkit.com
+HOST,cdn1.apple-mapkit.com
+HOST,cdn2.apple-mapkit.com
+HOST,cdn3.apple-mapkit.com
+HOST,cdn4.apple-mapkit.com
 HOST-SUFFIX,researchkit.cn
 HOST-SUFFIX,researchkit.com.cn
 HOST-SUFFIX,swiftui.cn

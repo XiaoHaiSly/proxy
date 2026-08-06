@@ -1,4 +1,14 @@
+HOST,cdn-cn.apple-mapkit.com
+HOST,cdn-cn1.apple-mapkit.com
+HOST,cdn-cn2.apple-mapkit.com
+HOST,cdn-cn3.apple-mapkit.com
+HOST,cdn-cn4.apple-mapkit.com
 HOST,cdn.ampproject.org
+HOST,cdn.apple-mapkit.com
+HOST,cdn1.apple-mapkit.com
+HOST,cdn2.apple-mapkit.com
+HOST,cdn3.apple-mapkit.com
+HOST,cdn4.apple-mapkit.com
 HOST,crashlyticsreports-pa.googleapis.com
 HOST,download.visualstudio.microsoft.com
 HOST,firebase-settings.crashlytics.com
