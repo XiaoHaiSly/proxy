@@ -8,6 +8,7 @@
 2gis https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/2gis.yaml
 2kgames https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/2kgames.yaml
 36kr https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/36kr.yaml
+36kr@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/36kr@ads.yaml
 4399 https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/4399.yaml
 4chan https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/4chan.yaml
 4pda https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/4pda.yaml
@@ -592,6 +593,7 @@ discoveryplus https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/ge
 discuz https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discuz.yaml
 disney https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.yaml
 disney@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney@ads.yaml
+disney@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney@cn.yaml
 disqus https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disqus.yaml
 divar https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/divar.yaml
 dji https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dji.yaml
@@ -715,6 +717,7 @@ flowus https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosi
 flowwow https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/flowwow.yaml
 flutter https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/flutter.yaml
 flyio https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/flyio.yaml
+focuschina https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/focuschina.yaml
 fonbet https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fonbet.yaml
 fontawesome https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fontawesome.yaml
 fontexplorer https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fontexplorer.yaml
@@ -844,7 +847,6 @@ hkedcity https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geo
 hketgroup https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hketgroup.yaml
 hketgroup@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hketgroup@cn.yaml
 hkgolden https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hkgolden.yaml
-hkopentv https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hkopentv.yaml
 hkt https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hkt.yaml
 hku https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hku.yaml
 hkust https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hkust.yaml

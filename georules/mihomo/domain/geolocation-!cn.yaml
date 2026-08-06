@@ -165,6 +165,7 @@ payload:
 - dfp6rglgjqszk.cloudfront.net
 - dgeft87wbj63p.cloudfront.net
 - discord-attachments-uploads-prd.storage.googleapis.com
+- disneyplus.com.ssl.sc.omtrdc.net
 - dl.begellhouse.com
 - dlgarenanow-a.akamaihd.net
 - dlmobilegarena-a.akamaihd.net
@@ -275,9 +276,11 @@ payload:
 - location.microsoft.com
 - lolstatic-a.akamaihd.net
 - m1.ppy.sh
+- matsuridayo.github.io
 - mdn.mozillademos.org
 - media-rockstargames-com.akamaized.net
 - medone-education.thieme.com
+- metacubex.github.io
 - misa-prod.s3.ap-northeast-1.amazonaws.com
 - mobilelive-hamivideo.cdn.hinet.net
 - mozilla-ohttp.fastly-edge.com
@@ -291,8 +294,6 @@ payload:
 - muse.jhu.edu
 - mwf-service.akamaized.net
 - na1r.services.adobe.com
-- nab.demdex.net
-- nationalaustraliaban.tt.omtrdc.net
 - nbbb1bb7.pmhcjk.com
 - netflix.com.edgesuite.net
 - notary-submissions-prod.s3-accelerate.amazonaws.com
@@ -387,6 +388,7 @@ payload:
 - pvr-hamivideo.cdn.hinet.net
 - q676790b.pmhcjk.com
 - qualcomm.sc.omtrdc.net
+- rabbit-hole-1.gitbook.io
 - rink.hockeyapp.net
 - roblox-load-generator-configuration.s3.us-east-2.amazonaws.com
 - roblox-poc.global.ssl.fastly.net
@@ -530,6 +532,7 @@ payload:
 - t21.nikkei.co.jp
 - t21ipau.nikkei.co.jp
 - teamviewer.com.cdn.cloudflare.net
+- throneproj.github.io
 - thumbnail-hamivideo.cdn.hinet.net
 - time-a-b.nist.gov
 - time-a-g.nist.gov
@@ -951,6 +954,7 @@ payload:
 - +.2047.name
 - +.2047.one
 - +.2049bbs.xyz
+- +.20thcenturystudios.com
 - +.20thcenturystudios.com.au
 - +.20thcenturystudios.com.br
 - +.20thcenturystudios.jp
@@ -980,10 +984,14 @@ payload:
 - +.2bit8.com
 - +.2buybeatsbydre.com
 - +.2ch.hk
+- +.2ch.life
 - +.2ch.net
+- +.2ch.org
+- +.2ch.su
 - +.2chav.com
 - +.2dgen.com
 - +.2drdrebeats.com
+- +.2dust.link
 - +.2gayboys.com
 - +.2gis.ae
 - +.2gis.am
@@ -1371,6 +1379,7 @@ payload:
 - +.abc.xyz
 - +.abcheadphones.com
 - +.abclider.com
+- +.abcnews.com
 - +.abeatsbydrdre.com
 - +.abebooks.co.uk
 - +.abebooks.com
@@ -2375,6 +2384,7 @@ payload:
 - +.amnesty.org
 - +.amnesty.org.hk
 - +.amnestyusa.org
+- +.amnezia.org
 - +.amodoll.com
 - +.amourangels.com
 - +.amp.dev
@@ -3623,6 +3633,7 @@ payload:
 - +.baltnews.com
 - +.baltnews.lt
 - +.bamgrid.com
+- +.bamtech.net
 - +.bamtoki.com
 - +.banan.tv
 - +.banana-vpn.com
@@ -5479,7 +5490,6 @@ payload:
 - +.byspotify.com
 - +.bystys.tech
 - +.bytedapm.com
-- +.byteoversea.com
 - +.bytick.com
 - +.c-est-simple.com
 - +.c-ij.com
@@ -6241,10 +6251,13 @@ payload:
 - +.claravenger.com
 - +.clarivate.com
 - +.clash.com
+- +.clashmi.app
 - +.clashmini.com
 - +.clashofclans.com
+- +.clashparty.org
 - +.clashroyale.com
 - +.clashroyaleapp.com
+- +.clashverge.dev
 - +.clashyun.com
 - +.clasporno.org
 - +.classicalguitarblog.net
@@ -6307,9 +6320,11 @@ payload:
 - +.cloudflare-ipfs.com
 - +.cloudflare-quic.com
 - +.cloudflare-terms-of-service-abuse.com
+- +.cloudflare.app
 - +.cloudflare.com
 - +.cloudflare.dev
 - +.cloudflare.net
+- +.cloudflare.pay
 - +.cloudflare.tv
 - +.cloudflareaccess.com
 - +.cloudflareapps.com
@@ -7228,7 +7243,6 @@ payload:
 - +.deluxe.com.hk
 - +.delvenetworks.com
 - +.demandware.com
-- +.demdex.net
 - +.demo.unlock-music.dev
 - +.democracy.earth
 - +.demonoid.is
@@ -7279,6 +7293,7 @@ payload:
 - +.detaliczny.com
 - +.detentiongirls.com
 - +.detodosparatodos.org
+- +.detpress.com
 - +.dettol-prize.com
 - +.dettol.at
 - +.dettol.be
@@ -7553,7 +7568,9 @@ payload:
 - +.disney.ru
 - +.disney.se
 - +.disney.sg
+- +.disneyaccount.com
 - +.disneyadsales.com
+- +.disneyanimation.com
 - +.disneyarena.com
 - +.disneyaulani.com
 - +.disneybaby.com
@@ -7569,6 +7586,7 @@ payload:
 - +.disneyinternationalhd.com
 - +.disneyjunior.com
 - +.disneyjuniortreataday.com
+- +.disneylandparis.com
 - +.disneylatino.com
 - +.disneymagicmoments.co.il
 - +.disneymagicmoments.co.uk
@@ -7590,11 +7608,13 @@ payload:
 - +.disneypeoplesurveys.com
 - +.disneyplus.bn5x.net
 - +.disneyplus.com
+- +.disneyprivacycenter.com
 - +.disneyredirects.com
 - +.disneysrivieraresort.com
 - +.disneystore.com
 - +.disneystreaming.com
 - +.disneysubscription.com
+- +.disneytermsofuse.com
 - +.disneytickets.co.uk
 - +.disneyturkiye.com.tr
 - +.disneytvajobs.com
@@ -9586,6 +9606,7 @@ payload:
 - +.flatmates.com.au
 - +.flatpak.org
 - +.flatt.tech
+- +.flclashx.app
 - +.fldz8.buzz
 - +.flecheinthepeche.fr
 - +.fleshbot.com
@@ -9622,6 +9643,7 @@ payload:
 - +.flowgpt.com
 - +.flowhongkong.net
 - +.flowtype.org
+- +.flowvy.io
 - +.flowwow-images.com
 - +.flowwow.com
 - +.fluffychat.im
@@ -9956,6 +9978,7 @@ payload:
 - +.freefacebookads.net
 - +.freefblikes.com
 - +.freefbx.com
+- +.freeform.com
 - +.freegao.com
 - +.freegaypornhdtube.com
 - +.freegaysexgames.com
@@ -11945,6 +11968,7 @@ payload:
 - +.honestpornreviews.com
 - +.hongjie10.xyz
 - +.hongjie11.xyz
+- +.hongkongdisneyland.com
 - +.hongkongdoll.tv
 - +.hongkongdollvideo.org
 - +.hongkongfp.com
@@ -12898,6 +12922,7 @@ payload:
 - +.inclusivegrowthscore.com
 - +.incommon-rsa.org
 - +.incredibox.fr
+- +.incy.cc
 - +.ind.sh
 - +.indazn.com
 - +.indaznlab.com
@@ -14126,6 +14151,7 @@ payload:
 - +.karechat.ai
 - +.karger.com
 - +.karinahart.com
+- +.karing.app
 - +.karlajames.com
 - +.karmahelp.ru
 - +.karta-banka-rf.ru
@@ -14927,6 +14953,7 @@ payload:
 - +.lubetube.com
 - +.lucahmelayu.club
 - +.lucasentertainment.com
+- +.lucasfilm.com
 - +.luckydesigner.space
 - +.luckyissue.com
 - +.luckymobile.ca
@@ -16903,6 +16930,7 @@ payload:
 - +.nbys.tv
 - +.nbys1.tv
 - +.nbyy.tv
+- +.ncbi.nlm.nih.gov
 - +.nchrd.org
 - +.ncl.edu.tw
 - +.ncloud.com
@@ -16932,6 +16960,7 @@ payload:
 - +.neicad.com
 - +.neiexplicit.com
 - +.neifea.com
+- +.neigbuy.com
 - +.neimotion.com
 - +.neinastranincad.com
 - +.neisoftware.com
@@ -17516,6 +17545,7 @@ payload:
 - +.nsfw247.to
 - +.nsfwmemes.com
 - +.nsimg.net
+- +.nsloon.com
 - +.nspk.ru
 - +.ntc.party
 - +.ntd.com
@@ -17945,6 +17975,7 @@ payload:
 - +.onetrust.com
 - +.onevps.com
 - +.oneworldmanystories.com
+- +.onexray.com
 - +.onfinality.io
 - +.onindiansex.com
 - +.oninstagram.com
@@ -18782,6 +18813,7 @@ payload:
 - +.piwheels.org
 - +.pixanalytics.com
 - +.pixapp.net
+- +.pixar.com
 - +.pixate.com
 - +.pixeldrain.com
 - +.pixelqi.com
@@ -19462,6 +19494,7 @@ payload:
 - +.privilege.hk
 - +.privilege.tw
 - +.privoxy.org
+- +.prizrak.app
 - +.procopytips.com
 - +.proctoscopeexam.com
 - +.prod-my.games
@@ -20697,6 +20730,7 @@ payload:
 - +.search.aol.com
 - +.search.com
 - +.search.xxx
+- +.searchlightpictures.com
 - +.searx.me
 - +.seasidestory.tokyo
 - +.seattlefdc.com
@@ -21015,6 +21049,7 @@ payload:
 - +.shadbase.com
 - +.shadeyouvpn.com
 - +.shadowcomplex.com
+- +.shadowlaunch.com
 - +.shadowslaves.com
 - +.shadowsocks.be
 - +.shadowsocks.com
@@ -21939,6 +21974,8 @@ payload:
 - +.starwarsjedifallenorder.com
 - +.starwarskids.com
 - +.starwarstheoldrepublic.com
+- +.stash.wiki
+- +.stash.ws
 - +.stateofthemap.com
 - +.stateofthemap.org
 - +.static-cisco.com
@@ -22770,6 +22807,7 @@ payload:
 - +.theuab.net
 - +.theverge.com
 - +.thevirtualsexreview.com
+- +.thewaltdisneycompany.com
 - +.theweek.com
 - +.theweek.in
 - +.thewgo.org
@@ -23026,6 +23064,7 @@ payload:
 - +.tokyo-sports.co.jp
 - +.tokyo-tosho.net
 - +.tokyocn.com
+- +.tokyodisneyresort.jp
 - +.tokyomotion.com
 - +.tokyomotion.net
 - +.tokyonightstyle.com
@@ -24798,6 +24837,7 @@ payload:
 - +.walmart.com
 - +.walmart.pharmacy
 - +.walmartimages.com
+- +.waltdisneystudios.com
 - +.waltermartin.com
 - +.waltermartin.org
 - +.wana-tv.sbs
@@ -25024,6 +25064,7 @@ payload:
 - +.wforum.com
 - +.wgcdn.co
 - +.wgcrowd.io
+- +.wgtunnel.com
 - +.whasil.xyz
 - +.what-fan.net
 - +.whatblocked.com
@@ -25239,6 +25280,7 @@ payload:
 - +.wirelessreach.com
 - +.wiremoneytoirelandwithxoomeasierandcheaper.com
 - +.wireshark.org
+- +.wiresock.net
 - +.wise-research.com
 - +.wise.com
 - +.wisecoin.com
