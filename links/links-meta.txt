@@ -55,6 +55,7 @@ agora https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosit
 aiqicha https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/aiqicha.yaml
 airbnb https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/airbnb.yaml
 airchina https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/airchina.yaml
+airchina@!cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/airchina@!cn.yaml
 airwick https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/airwick.yaml
 airwick@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/airwick@cn.yaml
 aisiku https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/aisiku.yaml
