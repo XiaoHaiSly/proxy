@@ -28,10 +28,15 @@
         "atanx2.alicdn.com",
         "baichuan-sdk.alicdn.com",
         "cdngslb.com",
+        "cn-beijing.aliyuncs.com",
+        "cn-chengdu.aliyuncs.com",
+        "cn-guangzhou.aliyuncs.com",
         "cn-hangzhou.aliyuncs.com",
+        "cn-hongkong.aliyuncs.com",
         "cn-shanghai.aliyuncs.com",
         "fcapp.run",
         "hichina.com",
+        "hotfix-api.aliyuncs.com",
         "ica-alliance.org",
         "kunlunaq.com",
         "kunlunar.com",
@@ -84,6 +89,7 @@
         "oss-me-east-1.aliyuncs.com",
         "oss-us-east-1.aliyuncs.com",
         "oss-us-west-1.aliyuncs.com",
+        "registry.aliyuncs.com",
         "tce.alicdn.com"
       ]
     }
