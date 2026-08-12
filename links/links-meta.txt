@@ -33,6 +33,8 @@ acer@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geos
 acfun https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/acfun.yaml
 acfun@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/acfun@ads.yaml
 actalis https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/actalis.yaml
+activision-blizzard https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/activision-blizzard.yaml
+activision https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/activision.yaml
 adblock https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/adblock.yaml
 adblockplus https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/adblockplus.yaml
 addthis https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/addthis.yaml
