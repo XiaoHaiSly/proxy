@@ -1230,6 +1230,7 @@ nikkei https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosi
 nintendo https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nintendo.yaml
 nintendo@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nintendo@cn.yaml
 nist https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nist.yaml
+nixos https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nixos.yaml
 nodejs https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nodejs.yaml
 nodeseek https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nodeseek.yaml
 noip https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/noip.yaml
