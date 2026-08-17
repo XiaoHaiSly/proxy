@@ -1686,7 +1686,6 @@ twitter@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/
 typekit https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/typekit.yaml
 typenetwork https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/typenetwork.yaml
 typography https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/typography.yaml
-u17 https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/u17.yaml
 uber https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/uber.yaml
 ubiquiti https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubiquiti.yaml
 ubiquiti@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubiquiti@cn.yaml
