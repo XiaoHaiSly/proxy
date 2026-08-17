@@ -3,17 +3,26 @@
   "rules": [
     {
       "domain": [
+        "apilog-web.acfun.cn",
         "log-sdk.gifshow.com",
         "wlog.kuaishou.com"
       ]
     },
     {
       "domain_suffix": [
+        "ac.fun",
+        "acfun.cn",
+        "acfun.net",
+        "acfunchina.cn",
+        "acfunchina.com",
+        "acfunchina.net",
         "adbkwai.com",
         "adkwai.com",
         "adukwai.com",
+        "aixifan.com",
         "e.kuaishou.cn",
         "e.kuaishou.com",
+        "eckwai.com",
         "ecukwai.com",
         "gifshow.com",
         "inkuai.com",
@@ -27,10 +36,15 @@
         "kuaishoupay.com",
         "kuaishouzt.com",
         "kwaicdn.com",
+        "kwaishop.com",
+        "kwaixiaodian.com",
+        "kwaiying.com",
         "kwaizt.com",
         "kwimgs.com",
+        "mojidoc.com",
         "qingque.cn",
         "viviv.com",
+        "wskwai.com",
         "wsukwai.com",
         "yximgs.com"
       ]

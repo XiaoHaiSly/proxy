@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain": [
+        "apilog-web.acfun.cn",
         "log-sdk.gifshow.com",
         "wlog.kuaishou.com"
       ]
