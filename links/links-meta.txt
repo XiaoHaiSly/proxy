@@ -1235,6 +1235,7 @@ nodejs https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosi
 nodeseek https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nodeseek.yaml
 noip https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/noip.yaml
 nordstrom https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nordstrom.yaml
+nordvpn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nordvpn.yaml
 notion https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/notion.yaml
 now https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/now.yaml
 nowcoder https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nowcoder.yaml
