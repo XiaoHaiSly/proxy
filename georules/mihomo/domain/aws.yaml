@@ -16,6 +16,7 @@ payload:
 - +.amazoncognito.com
 - +.amazonses.com
 - +.amazonwebservices.cn
+- +.amazonwebservices.com
 - +.amazonwebservices.com.cn
 - +.amazonworkdocs.cn
 - +.amazonworkdocs.com
@@ -35,6 +36,8 @@ payload:
 - +.aws-border.cn
 - +.aws-icp-domain-manager.cn
 - +.aws-iot-hackathon.com
+- +.aws.a2z.com
+- +.aws.amazon.com
 - +.aws.com
 - +.aws.dev
 - +.awsapprunner.com

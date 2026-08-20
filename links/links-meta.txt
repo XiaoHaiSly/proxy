@@ -90,7 +90,6 @@ amazon@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/ge
 amazontrust https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazontrust.yaml
 amc https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amc.yaml
 amd https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amd.yaml
-amd@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amd@cn.yaml
 amp https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amp.yaml
 amp@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amp@cn.yaml
 anaconda https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anaconda.yaml
@@ -1691,7 +1690,6 @@ uber https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite
 ubiquiti https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubiquiti.yaml
 ubiquiti@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubiquiti@cn.yaml
 ubisoft https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubisoft.yaml
-ubisoft@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubisoft@cn.yaml
 ubuntu https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubuntu.yaml
 ubuntukylin https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ubuntukylin.yaml
 uc https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/uc.yaml
