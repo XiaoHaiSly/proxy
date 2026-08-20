@@ -3,8 +3,7 @@
   "rules": [
     {
       "domain": [
-        "bj1.api.bing.com",
-        "emoi-cncdn.bing.com"
+        "bj1.api.bing.com"
       ]
     },
     {
