@@ -1723,8 +1723,6 @@ vercel https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosi
 verisign-pki https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/verisign-pki.yaml
 verisign https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/verisign.yaml
 verizon https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/verizon.yaml
-verizon@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/verizon@ads.yaml
-verizon@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/verizon@cn.yaml
 vgtime https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vgtime.yaml
 viber https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/viber.yaml
 vilavpn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vilavpn.yaml
