@@ -1208,6 +1208,7 @@ netflix https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geos
 netlify https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netlify.yaml
 neuralink https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/neuralink.yaml
 newegg https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/newegg.yaml
+newgrounds https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/newgrounds.yaml
 newscorp https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/newscorp.yaml
 newsmax https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/newsmax.yaml
 nexitally https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nexitally.yaml
