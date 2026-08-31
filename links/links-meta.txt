@@ -92,6 +92,8 @@ amc https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/
 amd https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amd.yaml
 amp https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amp.yaml
 amp@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amp@cn.yaml
+amplitude https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amplitude.yaml
+amplitude@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amplitude@ads.yaml
 anaconda https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anaconda.yaml
 anandtech https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anandtech.yaml
 android https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/android.yaml

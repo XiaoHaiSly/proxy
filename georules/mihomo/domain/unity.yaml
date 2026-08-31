@@ -1,6 +1,5 @@
 payload:
 - +.analytics.cloud.unity3d.com
-- +.api2.amplitude.com
 - +.cdp.cloud.unity3d.com
 - +.config.uca.cloud.unity3d.com
 - +.iads.unity3d.com
