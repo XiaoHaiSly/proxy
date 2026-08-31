@@ -304,6 +304,12 @@ DOMAIN-SUFFIX,analytics.tiktok.com
 DOMAIN-SUFFIX,analytics.vk.com
 DOMAIN-SUFFIX,analytics.vpc.duolingo.com
 DOMAIN-SUFFIX,api-adservices.apple.com
+DOMAIN-SUFFIX,api-secure.amplitude.com
+DOMAIN-SUFFIX,api-secure.eu.amplitude.com
+DOMAIN-SUFFIX,api-sr.amplitude.com
+DOMAIN-SUFFIX,api-sr.eu.amplitude.com
+DOMAIN-SUFFIX,api.amplitude.com
+DOMAIN-SUFFIX,api.eu.amplitude.com
 DOMAIN-SUFFIX,api2.amplitude.com
 DOMAIN-SUFFIX,app-ads-services.com
 DOMAIN-SUFFIX,app-analytics-services-att.com
@@ -319,6 +325,8 @@ DOMAIN-SUFFIX,apptracer.ru
 DOMAIN-SUFFIX,ar.umeng.com
 DOMAIN-SUFFIX,ark.letv.com
 DOMAIN-SUFFIX,aspect-upush.umeng.com
+DOMAIN-SUFFIX,assistant-api.amplitude.com
+DOMAIN-SUFFIX,assistant-api.eu.amplitude.com
 DOMAIN-SUFFIX,assp.sohu.com
 DOMAIN-SUFFIX,atanx.alicdn.com
 DOMAIN-SUFFIX,atanx2.alicdn.com
@@ -350,6 +358,8 @@ DOMAIN-SUFFIX,c.uaa.iqiyi.com
 DOMAIN-SUFFIX,cb.baidu.com
 DOMAIN-SUFFIX,cbjs.baidu.com
 DOMAIN-SUFFIX,ccs.umeng.com
+DOMAIN-SUFFIX,cdn.amplitude.com
+DOMAIN-SUFFIX,cdn.eu.amplitude.com
 DOMAIN-SUFFIX,cdp.cloud.unity3d.com
 DOMAIN-SUFFIX,clarity.ms
 DOMAIN-SUFFIX,clck.yandex.ru
@@ -408,6 +418,8 @@ DOMAIN-SUFFIX,ecmc.bdimg.com
 DOMAIN-SUFFIX,eduad.baidu.com
 DOMAIN-SUFFIX,eiv.baidu.com
 DOMAIN-SUFFIX,ems.youku.com
+DOMAIN-SUFFIX,engagement-static.amplitude.com
+DOMAIN-SUFFIX,engagement-static.eu.amplitude.com
 DOMAIN-SUFFIX,euads-o.api.leiniao.com
 DOMAIN-SUFFIX,extlog.snssdk.com
 DOMAIN-SUFFIX,facebookads.com
@@ -452,6 +464,8 @@ DOMAIN-SUFFIX,graph-fallback.instagram.com
 DOMAIN-SUFFIX,graph.instagram.com
 DOMAIN-SUFFIX,graph.whatsapp.com
 DOMAIN-SUFFIX,graph.whatsapp.net
+DOMAIN-SUFFIX,gs.amplitude.com
+DOMAIN-SUFFIX,gs.eu.amplitude.com
 DOMAIN-SUFFIX,guanggaoad.youku.com
 DOMAIN-SUFFIX,h-adashx.ut.ele.me
 DOMAIN-SUFFIX,h-adashx.ut.taobao.com
@@ -489,6 +503,8 @@ DOMAIN-SUFFIX,ja1.gamersky.com
 DOMAIN-SUFFIX,ja2.gamersky.com
 DOMAIN-SUFFIX,jzt.jd.com
 DOMAIN-SUFFIX,kurogames-ads.com
+DOMAIN-SUFFIX,lab.amplitude.com
+DOMAIN-SUFFIX,lab.eu.amplitude.com
 DOMAIN-SUFFIX,ladsp.com
 DOMAIN-SUFFIX,lianmeng.360.cn
 DOMAIN-SUFFIX,log-upload-os.hoyoverse.com
@@ -605,6 +621,8 @@ DOMAIN-SUFFIX,qqdata.ab.qq.com
 DOMAIN-SUFFIX,qwapi.com
 DOMAIN-SUFFIX,r.mail.ru
 DOMAIN-SUFFIX,radar.imgsmail.ru
+DOMAIN-SUFFIX,regionconfig.amplitude.com
+DOMAIN-SUFFIX,regionconfig.eu.amplitude.com
 DOMAIN-SUFFIX,reke.at.sohu.com
 DOMAIN-SUFFIX,relap.mail.ru
 DOMAIN-SUFFIX,report.qqweb.qq.com
@@ -640,6 +658,8 @@ DOMAIN-SUFFIX,socdm.com
 DOMAIN-SUFFIX,spcode.baidu.com
 DOMAIN-SUFFIX,splash-ads.cdn.unity.cn
 DOMAIN-SUFFIX,splash-ads.unitychina.cn
+DOMAIN-SUFFIX,sr-client-cfg.amplitude.com
+DOMAIN-SUFFIX,sr-client-cfg.eu.amplitude.com
 DOMAIN-SUFFIX,stat.m.jd.com
 DOMAIN-SUFFIX,stat.y.qq.com
 DOMAIN-SUFFIX,stat.youku.com
