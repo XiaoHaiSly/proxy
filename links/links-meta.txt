@@ -1736,6 +1736,7 @@ visualarts https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/g
 viu https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/viu.yaml
 vivo https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vivo.yaml
 vivo@!cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vivo@!cn.yaml
+vixengroup https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vixengroup.yaml
 vk https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vk.yaml
 vk@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vk@ads.yaml
 vmware https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/vmware.yaml
