@@ -540,7 +540,9 @@ HOST-SUFFIX,tencentbyod.com
 HOST-SUFFIX,tencentcdb.cn
 HOST-SUFFIX,tencentcdb.com
 HOST-SUFFIX,tencentcdb.com.cn
+HOST-SUFFIX,tencentclb.cn
 HOST-SUFFIX,tencentclb.com
+HOST-SUFFIX,tencentclb.com.cn
 HOST-SUFFIX,tencentcloud-aiot.com
 HOST-SUFFIX,tencentcloud.com
 HOST-SUFFIX,tencentcloudapi.com
@@ -564,6 +566,7 @@ HOST-SUFFIX,tencenteiam.com
 HOST-SUFFIX,tencentelasticsearch.com
 HOST-SUFFIX,tencentid.com
 HOST-SUFFIX,tencentidentity.com
+HOST-SUFFIX,tencentmiying.com
 HOST-SUFFIX,tencentmusic.com
 HOST-SUFFIX,tencentproxy.com
 HOST-SUFFIX,tencentrio.com
@@ -574,6 +577,7 @@ HOST-SUFFIX,tencentwepark.com
 HOST-SUFFIX,tencentyun.com
 HOST-SUFFIX,tendbcluster.com
 HOST-SUFFIX,tendis.net
+HOST-SUFFIX,tengmed.com
 HOST-SUFFIX,tenpay.com
 HOST-SUFFIX,testjrzk.net.cn
 HOST-SUFFIX,testmeet.cn
