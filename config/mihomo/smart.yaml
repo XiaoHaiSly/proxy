@@ -8,7 +8,7 @@ proxy-providers:
 SUBS: &SUBS [Sub_1]
 
 HEALTH_CHECK: &HEALTH_CHECK 
-  {enable: true, interval: 300, lazy: false, url: 'https://www.gstatic.com/generate_204', tolerance: 80, timeout: 5000}
+  {enable: true, interval: 300, lazy: false, url: 'https://www.gstatic.com/generate_204', tolerance: 80, timeout: 3000}
 
 SELECT_T: &SELECT_T {type: select, use: *SUBS, <<: *HEALTH_CHECK}  
 
@@ -64,8 +64,6 @@ sniffer:
   skip-domain:
     - "Mijia Cloud"
     - "+.push.apple.com"
-  skip-dst-address:
-    - "rule-set:telegram_ip"
 
 tun:
   enable: true
@@ -85,34 +83,24 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
+    - "+.lan"
+    - "+.local"
     - "rule-set:private"
   default-nameserver:
-    - https://223.5.5.5/dns-query
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    #- https://mosdns.apad.pro/api-query
-    #- https://pz.fyi/dns-query
-    #- https://d.atri.ink/dns-query
-  nameserver-policy:
-    "rule-set:private,cn": [system]
-    "rule-set:proxy": ["https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀"]
-    #"rule-set:proxy": ["https://dns.cloudflare.com/dns-query#𝑷𝑹𝑶𝑿𝒀"]
-  direct-nameserver:
     - 223.5.5.5
-    - 119.29.29.29
-  direct-nameserver-follow-policy: true
-
+  nameserver:
+    - system
+    - https://dns.alidns.com/dns-query
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+  nameserver-policy:
+    "rule-set:cn": [dns.alidns.com]
+    "rule-set:proxy": [https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀]
+    
 hosts:
   dns.alidns.com: [223.5.5.5, 223.6.6.6]
-  doh.pub: [1.12.12.21, 120.53.53.53]
   dns.google: [8.8.8.8, 8.8.4.4]
-  dns.cloudflare.com: [1.1.1.1, 1.0.0.1]
-  mosdns.apad.pro: 117.50.76.202
-  pz.fyi: 106.54.11.55
-  d.atri.ink: 43.129.165.236
-
+  
 proxies:
   - name: 𝑰𝑷𝒗𝟒 𝑭𝒊𝒓𝒔𝒕
     type: direct
@@ -124,7 +112,6 @@ proxies:
     type: direct
 
 proxy-groups:
-- {name: GLOBAL, type: select, <<: *HEALTH_CHECK, proxies: [𝑯𝑲 𝑵𝒐𝒅𝒆, 𝑱𝑷 𝑵𝒐𝒅𝒆, 𝑺𝑮 𝑵𝒐𝒅𝒆, 𝑼𝑺 𝑵𝒐𝒅𝒆, 𝑬𝑼 𝑵𝒐𝒅𝒆, 𝑶𝑻 𝑵𝒐𝒅𝒆, 𝑨𝑰-𝑶𝒏𝒍𝒚, 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, 𝑷𝑹𝑶𝑿𝒀, 𝑪𝑯𝑰𝑵𝑨], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Area.png"}
 - {name: 𝑯𝑲 𝑵𝒐𝒅𝒆, <<: *SELECT_T, filter: '(?i)港|HK|Hong Kong', proxies: [𝑯𝑲-𝑬𝑫𝑮𝑬, 𝑯𝑲-𝑨𝑼𝑻𝑶, 𝑯𝑲-𝑭𝑨𝑳𝑳], icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png}
 - {name: 𝑱𝑷 𝑵𝒐𝒅𝒆, <<: *SELECT_T, filter: '(?i)日本|东京|大阪|JP|Japan', proxies: [𝑱𝑷-𝑬𝑫𝑮𝑬, 𝑱𝑷-𝑨𝑼𝑻𝑶, 𝑱𝑷-𝑭𝑨𝑳𝑳], icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png}
 - {name: 𝑺𝑮 𝑵𝒐𝒅𝒆, <<: *SELECT_T, filter: '(?i)新加坡|坡|SG|狮城|Singapore', proxies: [𝑺𝑮-𝑬𝑫𝑮𝑬, 𝑺𝑮-𝑨𝑼𝑻𝑶, 𝑺𝑮-𝑭𝑨𝑳𝑳], icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png}
