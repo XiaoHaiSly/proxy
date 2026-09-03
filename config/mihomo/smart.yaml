@@ -91,10 +91,10 @@ dns:
   proxy-server-nameserver:
     - https://doh.pub/dns-query
   nameserver:
-    #- https://dns.alidns.com/dns-query
+    - https://dns.alidns.com/dns-query
     #- https://mosdns.apad.pro/api-query
     #- https://pz.fyi/dns-query
-    - https://d.atri.ink/dns-query
+    #- https://d.atri.ink/dns-query
   nameserver-policy:
     "rule-set:private,cn": [system]
     "rule-set:proxy": ["https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀"]
