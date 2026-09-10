@@ -39,7 +39,6 @@ HOST,ad.shunchangzhixing.com
 HOST,ad.tencentmusic.com
 HOST,ad.toutiao.com
 HOST,ad.v3mh.com
-HOST,ad.weibo.com
 HOST,ad.winrar.com.cn
 HOST,ad.ximalaya.com
 HOST,ad.xunkids.com
@@ -71,9 +70,11 @@ HOST,adjust.cn
 HOST,adjust.com
 HOST,adks.hpplay.cn
 HOST,adlink-api.huan.tv
+HOST,adlog.vivo.com.cn
 HOST,adm.funshion.com
 HOST,admarketing.yahoo.net
 HOST,admobile.top
+HOST,adreq.vivo.com.cn
 HOST,ads-api-o.api.leiniao.com
 HOST,ads-api.tiktok.com
 HOST,ads-api.twitter.com
@@ -182,7 +183,9 @@ HOST,adx.appsdk.com.cn
 HOST,adx.sogaha.cn
 HOST,adx.tuia.cn
 HOST,adxlog-adnet.vivo.com.cn
+HOST,adxlog.vivo.com.cn
 HOST,adxserver.ad.cmvideo.cn
+HOST,adxstatic.vivo.com.cn
 HOST,aegis.qq.com
 HOST,aem.dentsuchina.cn
 HOST,afs.googlesyndication.com
@@ -283,6 +286,7 @@ HOST,bj-td-menta-01-callback.advlion.com
 HOST,bj.ad.track.66mobi.com
 HOST,books-analytics-events.apple.com
 HOST,bootpreload.uve.weibo.com
+HOST,brandadsstatic.vivo.com.cn
 HOST,browser.events.data.msn.cn
 HOST,browser.events.data.msn.com
 HOST,browsercfg-drcn.cloud.dbankcloud.cn
@@ -358,6 +362,7 @@ HOST,download.changhong.upgrade2.huan.tv
 HOST,downloadxml.changhong.upgrade2.huan.tv
 HOST,dsp-x.jd.com
 HOST,dsp.fcbox.com
+HOST,dsplog-adnet.vivo.com.cn
 HOST,dualstack-logs.amap.com
 HOST,dxp.baidu.com
 HOST,dyp2p-ali.douyucdn.cn
@@ -448,7 +453,6 @@ HOST,iadctest.qwapi.com
 HOST,iadmoo.apple.com
 HOST,iadmusicmat.music.126.net
 HOST,iadsdk.apple.com
-HOST,iadworkbench.apple.com
 HOST,ifacelog.iqiyi.com
 HOST,ifs.tanx.com
 HOST,ii.gdt.qq.com
@@ -695,7 +699,7 @@ HOST,s1.cdn-sg.advlion.com
 HOST,s8t.teads.tv
 HOST,saad.ms.zhangyue.net
 HOST,saas.hpplay.cn
-HOST,safebrowsing.urlsec.gg.com
+HOST,safebrowsing.urlsec.qq.com
 HOST,samsung-com.112.2o7.net
 HOST,samsungads.com
 HOST,saxysec.com
@@ -824,6 +828,7 @@ HOST,track.uc.cn
 HOST,tracker-prd.aldi.com.cn
 HOST,tracker.ai.xiaomi.com
 HOST,tracker.gitee.com
+HOST,tracking-adnet.vivo.com.cn
 HOST,tracking.miui.com
 HOST,tracking.rus.miui.com
 HOST,tuiguang.meitu.com
