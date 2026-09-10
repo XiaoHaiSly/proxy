@@ -40,7 +40,6 @@ payload:
 - ad.tencentmusic.com
 - ad.toutiao.com
 - ad.v3mh.com
-- ad.weibo.com
 - ad.winrar.com.cn
 - ad.ximalaya.com
 - ad.xunkids.com
@@ -72,9 +71,11 @@ payload:
 - adjust.com
 - adks.hpplay.cn
 - adlink-api.huan.tv
+- adlog.vivo.com.cn
 - adm.funshion.com
 - admarketing.yahoo.net
 - admobile.top
+- adreq.vivo.com.cn
 - ads-api-o.api.leiniao.com
 - ads-api.tiktok.com
 - ads-api.twitter.com
@@ -183,7 +184,9 @@ payload:
 - adx.sogaha.cn
 - adx.tuia.cn
 - adxlog-adnet.vivo.com.cn
+- adxlog.vivo.com.cn
 - adxserver.ad.cmvideo.cn
+- adxstatic.vivo.com.cn
 - aegis.qq.com
 - aem.dentsuchina.cn
 - afs.googlesyndication.com
@@ -284,6 +287,7 @@ payload:
 - bj.ad.track.66mobi.com
 - books-analytics-events.apple.com
 - bootpreload.uve.weibo.com
+- brandadsstatic.vivo.com.cn
 - browser.events.data.msn.cn
 - browser.events.data.msn.com
 - browsercfg-drcn.cloud.dbankcloud.cn
@@ -359,6 +363,7 @@ payload:
 - downloadxml.changhong.upgrade2.huan.tv
 - dsp-x.jd.com
 - dsp.fcbox.com
+- dsplog-adnet.vivo.com.cn
 - dualstack-logs.amap.com
 - dxp.baidu.com
 - dyp2p-ali.douyucdn.cn
@@ -449,7 +454,6 @@ payload:
 - iadmoo.apple.com
 - iadmusicmat.music.126.net
 - iadsdk.apple.com
-- iadworkbench.apple.com
 - ifacelog.iqiyi.com
 - ifs.tanx.com
 - ii.gdt.qq.com
@@ -696,7 +700,7 @@ payload:
 - s8t.teads.tv
 - saad.ms.zhangyue.net
 - saas.hpplay.cn
-- safebrowsing.urlsec.gg.com
+- safebrowsing.urlsec.qq.com
 - samsung-com.112.2o7.net
 - samsungads.com
 - saxysec.com
@@ -825,6 +829,7 @@ payload:
 - tracker-prd.aldi.com.cn
 - tracker.ai.xiaomi.com
 - tracker.gitee.com
+- tracking-adnet.vivo.com.cn
 - tracking.miui.com
 - tracking.rus.miui.com
 - tuiguang.meitu.com
