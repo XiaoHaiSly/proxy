@@ -215,19 +215,15 @@ HOST-SUFFIX,aoxvpn.com
 HOST-SUFFIX,apartmentratings.com
 HOST-SUFFIX,apartments.com
 HOST-SUFFIX,apat1989.org
-HOST-SUFFIX,api-gl.lbkrs.com
 HOST-SUFFIX,api-secure.recaptcha.net
 HOST-SUFFIX,api-verify.recaptcha.net
 HOST-SUFFIX,api.ai
-HOST-SUFFIX,api.futunn.com
-HOST-SUFFIX,api.lbkrs.com
 HOST-SUFFIX,api.moomoobull.com
 HOST-SUFFIX,api.palworldgame.com
 HOST-SUFFIX,api.pureapk.com
 HOST-SUFFIX,api.recaptcha.net
 HOST-SUFFIX,api.shuaiapi.com
 HOST-SUFFIX,api.steampowered.com
-HOST-SUFFIX,api5.futunn.com
 HOST-SUFFIX,apiary.io
 HOST-SUFFIX,apigee.com
 HOST-SUFFIX,apk.support
@@ -671,7 +667,6 @@ HOST-SUFFIX,cdjp.org
 HOST-SUFFIX,cdn-images.mailchimp.com
 HOST-SUFFIX,cdn-telegram.org
 HOST-SUFFIX,cdn.arstechnica.net
-HOST-SUFFIX,cdn.futustatic.com
 HOST-SUFFIX,cdn.jwplayer.com
 HOST-SUFFIX,cdn.printfriendly.com
 HOST-SUFFIX,cdn.seatguru.com
@@ -821,7 +816,6 @@ HOST-SUFFIX,cn.fmnnow.com
 HOST-SUFFIX,cn.sandscotaicentral.com
 HOST-SUFFIX,cn.shafaqna.com
 HOST-SUFFIX,cn.theaustralian.com.au
-HOST-SUFFIX,cn.uptodown.com
 HOST-SUFFIX,cna.com.tw
 HOST-SUFFIX,cnbbnews.wordpress.com
 HOST-SUFFIX,cnbeta.com.tw
@@ -1050,7 +1044,6 @@ HOST-SUFFIX,dougscripts.com
 HOST-SUFFIX,doujincafe.com
 HOST-SUFFIX,dowjones.io
 HOST-SUFFIX,download.dappcdn.com
-HOST-SUFFIX,download.futunn.com
 HOST-SUFFIX,dpool.top
 HOST-SUFFIX,dpp.org.tw
 HOST-SUFFIX,dpr.info
@@ -2366,7 +2359,6 @@ HOST-SUFFIX,lvv2.com
 HOST-SUFFIX,lyfhk.net
 HOST-SUFFIX,lzjscript.com
 HOST-SUFFIX,lzmtnews.org
-HOST-SUFFIX,m.hkgalden.com
 HOST-SUFFIX,m.me
 HOST-SUFFIX,m.moegirl.org
 HOST-SUFFIX,macgamestore.com
@@ -2775,12 +2767,8 @@ HOST-SUFFIX,ooni.org
 HOST-SUFFIX,open.firstory.me
 HOST-SUFFIX,openai.com
 HOST-SUFFIX,openapi-quote.longbridge.cn
-HOST-SUFFIX,openapi-quote.longbridge.com
 HOST-SUFFIX,openapi-trade.longbridge.cn
-HOST-SUFFIX,openapi-trade.longbridge.com
-HOST-SUFFIX,openapi.futunn.com
 HOST-SUFFIX,openapi.longbridge.cn
-HOST-SUFFIX,openapi.longbridge.com
 HOST-SUFFIX,openart.ai
 HOST-SUFFIX,opencritic.com
 HOST-SUFFIX,opendemocracy.net
@@ -3036,9 +3024,8 @@ HOST-SUFFIX,qmp4.com
 HOST-SUFFIX,qoos.com
 HOST-SUFFIX,qq.co.za
 HOST-SUFFIX,qstatus.com
-HOST-SUFFIX,qtcard.futunn.com
-HOST-SUFFIX,qtcardfthk.futufin.com
 HOST-SUFFIX,qtrac.eu
+HOST-SUFFIX,quakemachinex.com
 HOST-SUFFIX,questvisual.com
 HOST-SUFFIX,quitccp.org
 HOST-SUFFIX,quiz.directory
@@ -3443,7 +3430,6 @@ HOST-SUFFIX,superpages.com
 HOST-SUFFIX,supervpn.net
 HOST-SUFFIX,superzooi.com
 HOST-SUFFIX,supjav.com
-HOST-SUFFIX,support.futunn.com
 HOST-SUFFIX,supremecourt.gov
 HOST-SUFFIX,suprememastertv.com
 HOST-SUFFIX,surfeasy.com
@@ -3707,8 +3693,6 @@ HOST-SUFFIX,totalvpn.com
 HOST-SUFFIX,tou.tv
 HOST-SUFFIX,tpi.org.tw
 HOST-SUFFIX,tracfone.com
-HOST-SUFFIX,trade.futunn.com
-HOST-SUFFIX,trade.longportapp.com
 HOST-SUFFIX,tradeup.com
 HOST-SUFFIX,tradingview.com
 HOST-SUFFIX,translate.goog
