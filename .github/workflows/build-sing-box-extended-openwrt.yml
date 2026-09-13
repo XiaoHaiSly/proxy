@@ -49,92 +49,11 @@ env:
 jobs:
   build:
     name: Build ${{ matrix.name }}
-    if: inputs.architecture == 'all' || inputs.architecture == matrix.name
     runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - name: x86_64
-            go_arch: amd64
-            variant: musl
-            naive: true
-            go386: ''
-            goarm: ''
-            gomips: ''
-            build_target: linux_amd64
-          - name: aarch64
-            go_arch: arm64
-            variant: musl
-            naive: true
-            go386: ''
-            goarm: ''
-            gomips: ''
-            build_target: linux_arm64
-          - name: armv7
-            go_arch: arm
-            variant: musl
-            naive: true
-            go386: ''
-            goarm: '7'
-            gomips: ''
-            build_target: linux_arm_7
-          - name: mipsel
-            go_arch: mipsle
-            variant: musl
-            naive: true
-            go386: ''
-            goarm: ''
-            gomips: softfloat
-            build_target: linux_mipsle_softfloat
-          - name: riscv64
-            go_arch: riscv64
-            variant: musl
-            naive: true
-            go386: ''
-            goarm: ''
-            gomips: ''
-            build_target: linux_riscv64
-          - name: i386
-            go_arch: '386'
-            variant: ''
-            naive: false
-            go386: softfloat
-            goarm: ''
-            gomips: ''
-            build_target: linux_386_softfloat
-          - name: mips
-            go_arch: mips
-            variant: ''
-            naive: false
-            go386: ''
-            goarm: ''
-            gomips: softfloat
-            build_target: linux_mips_softfloat
-          - name: mips64
-            go_arch: mips64
-            variant: ''
-            naive: false
-            go386: ''
-            goarm: ''
-            gomips: softfloat
-            build_target: linux_mips64_softfloat
-          - name: mips64el
-            go_arch: mips64le
-            variant: ''
-            naive: false
-            go386: ''
-            goarm: ''
-            gomips: softfloat
-            build_target: linux_mips64le_softfloat
-          - name: loong64
-            go_arch: loong64
-            variant: ''
-            naive: false
-            go386: ''
-            goarm: ''
-            gomips: ''
-            build_target: linux_loong64
+        name: ${{ fromJSON(inputs.architecture == 'all' && '["x86_64","aarch64","armv7","mipsel","riscv64","i386","mips","mips64","mips64el","loong64"]' || format('["{0}"]', inputs.architecture)) }}
 
     steps:
       - name: Checkout upstream repository
@@ -171,8 +90,35 @@ jobs:
           echo "VERSION=$version" >> "$GITHUB_ENV"
           echo "Using upstream version: $version"
 
+      - name: Set architecture parameters
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "${{ matrix.name }}" in
+            x86_64)   GO_ARCH=amd64;    VARIANT=musl; NAIVE=true;  GO386=;         GOARM=; GOMIPS=;       BUILD_TARGET=linux_amd64 ;;
+            aarch64)  GO_ARCH=arm64;    VARIANT=musl; NAIVE=true;  GO386=;         GOARM=; GOMIPS=;       BUILD_TARGET=linux_arm64 ;;
+            armv7)    GO_ARCH=arm;       VARIANT=musl; NAIVE=true;  GO386=;         GOARM=7; GOMIPS=;       BUILD_TARGET=linux_arm_7 ;;
+            mipsel)   GO_ARCH=mipsle;    VARIANT=musl; NAIVE=true;  GO386=;         GOARM=; GOMIPS=softfloat; BUILD_TARGET=linux_mipsle_softfloat ;;
+            riscv64)  GO_ARCH=riscv64;   VARIANT=musl; NAIVE=true;  GO386=;         GOARM=; GOMIPS=;       BUILD_TARGET=linux_riscv64 ;;
+            i386)     GO_ARCH=386;       VARIANT=;     NAIVE=false; GO386=softfloat; GOARM=; GOMIPS=;       BUILD_TARGET=linux_386_softfloat ;;
+            mips)     GO_ARCH=mips;      VARIANT=;     NAIVE=false; GO386=;         GOARM=; GOMIPS=softfloat; BUILD_TARGET=linux_mips_softfloat ;;
+            mips64)   GO_ARCH=mips64;    VARIANT=;     NAIVE=false; GO386=;         GOARM=; GOMIPS=softfloat; BUILD_TARGET=linux_mips64_softfloat ;;
+            mips64el) GO_ARCH=mips64le;  VARIANT=;     NAIVE=false; GO386=;         GOARM=; GOMIPS=softfloat; BUILD_TARGET=linux_mips64le_softfloat ;;
+            loong64)  GO_ARCH=loong64;   VARIANT=;     NAIVE=false; GO386=;         GOARM=; GOMIPS=;       BUILD_TARGET=linux_loong64 ;;
+            *) echo "Unsupported architecture: ${{ matrix.name }}" >&2; exit 1 ;;
+          esac
+          {
+            echo "GO_ARCH=$GO_ARCH"
+            echo "VARIANT=$VARIANT"
+            echo "NAIVE=$NAIVE"
+            echo "GO386=$GO386"
+            echo "GOARM=$GOARM"
+            echo "GOMIPS=$GOMIPS"
+            echo "BUILD_TARGET=$BUILD_TARGET"
+          } >> "$GITHUB_ENV"
+
       - name: Clone cronet-go
-        if: matrix.naive && matrix.variant != 'purego'
+        if: contains(fromJSON('["x86_64","aarch64","armv7","mipsel","riscv64"]'), matrix.name)
         working-directory: upstream
         shell: bash
         run: |
@@ -186,7 +132,7 @@ jobs:
           git -C "$RUNNER_TEMP/cronet-go" submodule update --init --recursive --depth=1
 
       - name: Regenerate Debian keyring
-        if: matrix.naive && matrix.variant != 'purego'
+        if: contains(fromJSON('["x86_64","aarch64","armv7","mipsel","riscv64"]'), matrix.name)
         shell: bash
         run: |
           set -xeuo pipefail
@@ -195,27 +141,27 @@ jobs:
           GPG_TTY=/dev/null ./naiveproxy/src/build/linux/sysroot_scripts/generate_keyring.sh
 
       - name: Download Chromium toolchain
-        if: matrix.naive && matrix.variant != 'purego'
+        if: contains(fromJSON('["x86_64","aarch64","armv7","mipsel","riscv64"]'), matrix.name)
         shell: bash
         run: |
           set -xeuo pipefail
           cd "$RUNNER_TEMP/cronet-go"
-          if [[ '${{ matrix.variant }}' == 'musl' ]]; then
-            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} --libc=musl download-toolchain
+          if [[ "$VARIANT" == 'musl' ]]; then
+            go run ./cmd/build-naive --target=linux/$GO_ARCH --libc=musl download-toolchain
           else
-            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} download-toolchain
+            go run ./cmd/build-naive --target=linux/$GO_ARCH download-toolchain
           fi
 
       - name: Set Chromium toolchain environment
-        if: matrix.naive && matrix.variant != 'purego'
+        if: contains(fromJSON('["x86_64","aarch64","armv7","mipsel","riscv64"]'), matrix.name)
         shell: bash
         run: |
           set -xeuo pipefail
           cd "$RUNNER_TEMP/cronet-go"
-          if [[ '${{ matrix.variant }}' == 'musl' ]]; then
-            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} --libc=musl env >> "$GITHUB_ENV"
+          if [[ "$VARIANT" == 'musl' ]]; then
+            go run ./cmd/build-naive --target=linux/$GO_ARCH --libc=musl env >> "$GITHUB_ENV"
           else
-            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} env >> "$GITHUB_ENV"
+            go run ./cmd/build-naive --target=linux/$GO_ARCH env >> "$GITHUB_ENV"
           fi
 
       - name: Set build tags
@@ -223,15 +169,15 @@ jobs:
         shell: bash
         run: |
           set -xeuo pipefail
-          if [[ '${{ matrix.naive }}' == 'true' ]]; then
+          if [[ "$NAIVE" == 'true' ]]; then
             TAGS=$(cat release/DEFAULT_BUILD_TAGS)
           else
             TAGS=$(cat release/DEFAULT_BUILD_TAGS_OTHERS)
           fi
 
-          if [[ '${{ matrix.variant }}' == 'purego' ]]; then
+          if [[ "$VARIANT" == 'purego' ]]; then
             TAGS="${TAGS},with_purego"
-          elif [[ '${{ matrix.variant }}' == 'musl' ]]; then
+          elif [[ "$VARIANT" == 'musl' ]]; then
             TAGS="${TAGS},with_musl"
           fi
 
@@ -249,17 +195,18 @@ jobs:
         working-directory: upstream
         shell: bash
         env:
-          CGO_ENABLED: ${{ matrix.variant == 'musl' && '1' || '0' }}
-          GOOS: linux
-          GOARCH: ${{ matrix.go_arch }}
-          GO386: ${{ matrix.go386 }}
-          GOARM: ${{ matrix.goarm }}
-          GOMIPS: ${{ matrix.gomips }}
-          GOMIPS64: ${{ matrix.gomips }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -xeuo pipefail
           mkdir -p dist
+          export CGO_ENABLED="${VARIANT:+1}"
+          [[ "$VARIANT" == 'musl' ]] || export CGO_ENABLED=0
+          export GOOS=linux
+          export GOARCH="$GO_ARCH"
+          export GO386="$GO386"
+          export GOARM="$GOARM"
+          export GOMIPS="$GOMIPS"
+          export GOMIPS64="$GOMIPS"
           go build -v -trimpath -o dist/sing-box -tags "$BUILD_TAGS" \
             -ldflags "-X 'github.com/sagernet/sing-box/constant.Version=${VERSION}' ${LDFLAGS_SHARED} -s -w -buildid=" \
             ./cmd/sing-box
@@ -282,7 +229,7 @@ jobs:
           set -xeuo pipefail
           chmod +x .github/build_openwrt_packages.sh .github/build_openwrt_apk.sh .github/deb2ipk.sh
           .github/build_openwrt_packages.sh "$VERSION" \
-            "${{ matrix.build_target }}" \
+            "$BUILD_TARGET" \
             "dist/sing-box"
 
       - name: Verify generated packages
