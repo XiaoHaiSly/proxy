@@ -1,0 +1,362 @@
+name: Build sing-box-extended OpenWrt packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: 'Upstream branch or tag'
+        required: true
+        default: 'extended'
+        type: string
+      version:
+        description: 'Package version (leave empty to calculate from upstream)'
+        required: false
+        default: ''
+        type: string
+      architecture:
+        description: 'OpenWrt target family'
+        required: true
+        default: 'x86_64'
+        type: choice
+        options:
+          - x86_64
+          - aarch64
+          - armv7
+          - mipsel
+          - riscv64
+          - i386
+          - mips
+          - mips64
+          - mips64el
+          - loong64
+          - all
+      publish:
+        description: 'Create/update a GitHub Release in this repository'
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sing-box-extended-openwrt-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  UPSTREAM_REPO: shtorm-7/sing-box-extended
+
+jobs:
+  build:
+    name: Build ${{ matrix.name }}
+    if: inputs.architecture == 'all' || inputs.architecture == matrix.name
+    runs-on: ubuntu-26.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: x86_64
+            go_arch: amd64
+            variant: musl
+            naive: true
+            go386: ''
+            goarm: ''
+            gomips: ''
+            build_target: linux_amd64
+          - name: aarch64
+            go_arch: arm64
+            variant: musl
+            naive: true
+            go386: ''
+            goarm: ''
+            gomips: ''
+            build_target: linux_arm64
+          - name: armv7
+            go_arch: arm
+            variant: musl
+            naive: true
+            go386: ''
+            goarm: '7'
+            gomips: ''
+            build_target: linux_arm_7
+          - name: mipsel
+            go_arch: mipsle
+            variant: musl
+            naive: true
+            go386: ''
+            goarm: ''
+            gomips: softfloat
+            build_target: linux_mipsle_softfloat
+          - name: riscv64
+            go_arch: riscv64
+            variant: musl
+            naive: true
+            go386: ''
+            goarm: ''
+            gomips: ''
+            build_target: linux_riscv64
+          - name: i386
+            go_arch: '386'
+            variant: ''
+            naive: false
+            go386: softfloat
+            goarm: ''
+            gomips: ''
+            build_target: linux_386_softfloat
+          - name: mips
+            go_arch: mips
+            variant: ''
+            naive: false
+            go386: ''
+            goarm: ''
+            gomips: softfloat
+            build_target: linux_mips_softfloat
+          - name: mips64
+            go_arch: mips64
+            variant: ''
+            naive: false
+            go386: ''
+            goarm: ''
+            gomips: softfloat
+            build_target: linux_mips64_softfloat
+          - name: mips64el
+            go_arch: mips64le
+            variant: ''
+            naive: false
+            go386: ''
+            goarm: ''
+            gomips: softfloat
+            build_target: linux_mips64le_softfloat
+          - name: loong64
+            go_arch: loong64
+            variant: ''
+            naive: false
+            go386: ''
+            goarm: ''
+            gomips: ''
+            build_target: linux_loong64
+
+    steps:
+      - name: Checkout upstream repository
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ env.UPSTREAM_REPO }}
+          ref: ${{ inputs.source_ref }}
+          fetch-depth: 0
+          path: upstream
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.7'
+          cache: true
+          cache-dependency-path: upstream/go.sum
+
+      - name: Calculate version
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n '${{ inputs.version }}' ]]; then
+            echo "version=${{ inputs.version }}" >> "$GITHUB_ENV"
+          else
+            go run -v ./cmd/internal/read_tag --ci --nightly
+          fi
+
+      - name: Export version
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${version:?version is empty}"
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          echo "Using upstream version: $version"
+
+      - name: Clone cronet-go
+        if: matrix.naive && matrix.variant != 'purego'
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -xeuo pipefail
+          CRONET_GO_VERSION=$(cat .github/CRONET_GO_VERSION)
+          git init "$RUNNER_TEMP/cronet-go"
+          git -C "$RUNNER_TEMP/cronet-go" remote add origin https://github.com/sagernet/cronet-go.git
+          git -C "$RUNNER_TEMP/cronet-go" sparse-checkout set --no-cone '/*' '!/lib'
+          git -C "$RUNNER_TEMP/cronet-go" fetch --depth=1 --filter=blob:none origin "$CRONET_GO_VERSION"
+          git -C "$RUNNER_TEMP/cronet-go" checkout FETCH_HEAD
+          git -C "$RUNNER_TEMP/cronet-go" submodule update --init --recursive --depth=1
+
+      - name: Regenerate Debian keyring
+        if: matrix.naive && matrix.variant != 'purego'
+        shell: bash
+        run: |
+          set -xeuo pipefail
+          rm -f "$RUNNER_TEMP/cronet-go/naiveproxy/src/build/linux/sysroot_scripts/keyring.gpg"
+          cd "$RUNNER_TEMP/cronet-go"
+          GPG_TTY=/dev/null ./naiveproxy/src/build/linux/sysroot_scripts/generate_keyring.sh
+
+      - name: Download Chromium toolchain
+        if: matrix.naive && matrix.variant != 'purego'
+        shell: bash
+        run: |
+          set -xeuo pipefail
+          cd "$RUNNER_TEMP/cronet-go"
+          if [[ '${{ matrix.variant }}' == 'musl' ]]; then
+            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} --libc=musl download-toolchain
+          else
+            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} download-toolchain
+          fi
+
+      - name: Set Chromium toolchain environment
+        if: matrix.naive && matrix.variant != 'purego'
+        shell: bash
+        run: |
+          set -xeuo pipefail
+          cd "$RUNNER_TEMP/cronet-go"
+          if [[ '${{ matrix.variant }}' == 'musl' ]]; then
+            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} --libc=musl env >> "$GITHUB_ENV"
+          else
+            go run ./cmd/build-naive --target=linux/${{ matrix.go_arch }} env >> "$GITHUB_ENV"
+          fi
+
+      - name: Set build tags
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -xeuo pipefail
+          if [[ '${{ matrix.naive }}' == 'true' ]]; then
+            TAGS=$(cat release/DEFAULT_BUILD_TAGS)
+          else
+            TAGS=$(cat release/DEFAULT_BUILD_TAGS_OTHERS)
+          fi
+
+          if [[ '${{ matrix.variant }}' == 'purego' ]]; then
+            TAGS="${TAGS},with_purego"
+          elif [[ '${{ matrix.variant }}' == 'musl' ]]; then
+            TAGS="${TAGS},with_musl"
+          fi
+
+          echo "BUILD_TAGS=${TAGS}" >> "$GITHUB_ENV"
+          echo "BUILD_TAGS=${TAGS}"
+
+      - name: Set linker flags
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "LDFLAGS_SHARED=$(cat release/LDFLAGS)" >> "$GITHUB_ENV"
+
+      - name: Build sing-box
+        working-directory: upstream
+        shell: bash
+        env:
+          CGO_ENABLED: ${{ matrix.variant == 'musl' && '1' || '0' }}
+          GOOS: linux
+          GOARCH: ${{ matrix.go_arch }}
+          GO386: ${{ matrix.go386 }}
+          GOARM: ${{ matrix.goarm }}
+          GOMIPS: ${{ matrix.gomips }}
+          GOMIPS64: ${{ matrix.gomips }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -xeuo pipefail
+          mkdir -p dist
+          go build -v -trimpath -o dist/sing-box -tags "$BUILD_TAGS" \
+            -ldflags "-X 'github.com/sagernet/sing-box/constant.Version=${VERSION}' ${LDFLAGS_SHARED} -s -w -buildid=" \
+            ./cmd/sing-box
+          ./dist/sing-box version
+
+      - name: Install OpenWrt package tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ruby-full
+          sudo gem install --no-document fpm
+          docker run --rm -v /usr/local/bin:/mnt alpine:edge \
+            sh -c 'apk add --no-cache apk-tools-static && cp /sbin/apk.static /mnt/apk && chmod +x /mnt/apk'
+
+      - name: Build OpenWrt IPK/APK
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -xeuo pipefail
+          chmod +x .github/build_openwrt_packages.sh .github/build_openwrt_apk.sh .github/deb2ipk.sh
+          .github/build_openwrt_packages.sh "$VERSION" \
+            "${{ matrix.build_target }}" \
+            "dist/sing-box"
+
+      - name: Verify generated packages
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(dist/*.ipk dist/*.apk)
+          if (( ${#files[@]} == 0 )); then
+            echo 'ERROR: no .ipk/.apk files were generated.' >&2
+            exit 1
+          fi
+          printf '%s\n' "${files[@]}"
+          for file in "${files[@]}"; do
+            file "$file"
+          done
+
+      - name: Prepare artifacts
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p package-output
+          cp dist/*.ipk dist/*.apk package-output/
+          sha256sum package-output/* > package-output/SHA256SUMS
+          cat package-output/SHA256SUMS
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sing-box-extended-openwrt-${{ matrix.name }}-${{ env.VERSION }}
+          path: upstream/package-output/*
+          if-no-files-found: error
+          compression-level: 0
+
+      - name: Upload release files
+        if: inputs.publish
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-files-${{ matrix.name }}
+          path: upstream/package-output/*
+          if-no-files-found: error
+          compression-level: 0
+
+  publish:
+    name: Publish GitHub Release
+    if: ${{ inputs.publish && !cancelled() }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download release files
+        uses: actions/download-artifact@v5
+        with:
+          pattern: release-files-*
+          path: release-files
+          merge-multiple: true
+
+      - name: Resolve version
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION='${{ inputs.version }}'
+          if [[ -z "$VERSION" ]]; then
+            echo 'When publish=true, please provide an explicit version input.' >&2
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: sing-box-extended-${{ env.VERSION }}
+          name: sing-box-extended ${{ env.VERSION }} OpenWrt
+          files: release-files/*
+          generate_release_notes: false
+          make_latest: false
