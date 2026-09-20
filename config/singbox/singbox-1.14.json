@@ -216,13 +216,13 @@
         "tag": "telegram_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/ipcidr/telegraml.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/ipcidr/telegram.srs"
       },
       {
         "tag": "telegram_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/telegraml.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/telegram.srs"
       },
       {
         "tag": "youtube_domain",
