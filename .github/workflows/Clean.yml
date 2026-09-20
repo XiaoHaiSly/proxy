@@ -1,4 +1,4 @@
-name: Auto-Clean
+Name: Auto-Clean
 
 on:
   #自动清理：每天凌晨3点
@@ -22,3 +22,26 @@ jobs:
           delete_tags: true
           delete_workflows: true
           workflows_keep_day: 0
+
+      - name: Delete all Deployments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Fetching all deployments..."
+          DEPLOYMENT_IDS=$(gh api repos/${{ github.repository }}/deployments --paginate -q '.[].id')
+          
+          if [ -z "$DEPLOYMENT_IDS" ]; then
+            echo "No deployments found."
+            exit 0
+          fi
+
+          for ID in $DEPLOYMENT_IDS; do
+            echo "Deleting deployment $ID..."
+            gh api -X POST repos/${{ github.repository }}/deployments/$ID/statuses \
+              -f state=inactive \
+              -H "Accept: application/vnd.github+json" || true
+
+            gh api -X DELETE repos/${{ github.repository }}/deployments/$ID \
+              -H "Accept: application/vnd.github+json"
+          done
+          echo "All deployments have been deleted successfully."
