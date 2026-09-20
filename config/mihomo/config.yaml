@@ -111,17 +111,17 @@ _default_mrs_domain: &d {type: http, behavior: domain, format: mrs, interval: 86
 _default_mrs_ip: &i {type: http, behavior: ipcidr, format: mrs, interval: 86400}
 
 rule-providers:
-  private: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/private.mrs', path: ./ruleset/private.mrs}
-  private_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/private.mrs', path: ./ruleset/private_ip.mrs}
-  telegram: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/telegram.mrs', path: ./ruleset/telegram.mrs}
-  telegram_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/telegram.mrs', path: ./ruleset/telegram_ip.mrs}  
-  google: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/google.mrs', path: ./ruleset/google.mrs}
-  google_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/google.mrs', path: ./ruleset/google_ip.mrs}
-  ai: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/Ai.mrs', path: ./ruleset/ai.mrs}
-  github: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/github.mrs', path: ./ruleset/github.mrs}
-  china: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/china.mrs', path: ./ruleset/china-list.mrs}
-  china_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/china.mrs', path: ./ruleset/cn_ip.mrs}   
-  proxy: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/proxy.mrs', path: ./ruleset/proxy-list.mrs}
+  private: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs', path: ./ruleset/private.mrs}
+  private_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs', path: ./ruleset/private_ip.mrs}
+  telegram: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs', path: ./ruleset/telegram.mrs}
+  telegram_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs', path: ./ruleset/telegram_ip.mrs}  
+  google: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs', path: ./ruleset/google.mrs}
+  google_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs', path: ./ruleset/google_ip.mrs}
+  ai: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs', path: ./ruleset/ai.mrs}
+  github: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs', path: ./ruleset/github.mrs}
+  china: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs', path: ./ruleset/china-list.mrs}
+  china_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs', path: ./ruleset/cn_ip.mrs}   
+  proxy: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs', path: ./ruleset/proxy-list.mrs}
    
 rules: 
   - DOMAIN-SUFFIX,xyz,𝑪𝑯𝑰𝑵𝑨
