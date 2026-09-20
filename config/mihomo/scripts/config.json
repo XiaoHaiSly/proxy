@@ -41,7 +41,7 @@ function main(config) {
     "nameserver": ["https://dns.alidns.com/dns-query"],
     "proxy-server-nameserver": ["https://dns.alidns.com/dns-query"],
     "nameserver-policy": {
-      "rule-set:private": ["system"]
+      "rule-set:private": ["system"],
       "rule-set:china": ["https://dns.alidns.com/dns-query"],
       "rule-set:proxy": ["https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀"]
     }
