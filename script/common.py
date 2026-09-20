@@ -194,46 +194,6 @@ def singbox_json_to_unified(json_path):
     return unified
 
 
-QX_FIELD_MAP = {
-    'domain': 'HOST',
-    'domain_suffix': 'HOST-SUFFIX',
-    'domain_keyword': 'HOST-KEYWORD',
-}
-
-SURGE_FIELD_MAP = {
-    'domain': 'DOMAIN',
-    'domain_suffix': 'DOMAIN-SUFFIX',
-    'domain_keyword': 'DOMAIN-KEYWORD',
-}
-
-
-def _write_text_list(domain_part, ipcidr_part, list_path, field_map, ipv4_tag, ipv6_tag):
-    """按给定的字段映射写出纯文本规则列表（不带策略名），供 QuantumultX / Surge 等格式复用"""
-    lines = []
-    for field, tag in field_map.items():
-        for addr in sorted(domain_part.get(field, [])):
-            lines.append(f"{tag},{addr}")
-    for addr in sorted(ipcidr_part.get('ip_cidr', [])):
-        tag = ipv6_tag if ':' in addr else ipv4_tag
-        lines.append(f"{tag},{addr}")
-    if not lines:
-        return False
-    os.makedirs(os.path.dirname(list_path), exist_ok=True)
-    with open(list_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(lines) + '\n')
-    return True
-
-
-def write_qx_list(domain_part, ipcidr_part, list_path):
-    """生成 QuantumultX filter 规则格式的纯文本列表（HOST/HOST-SUFFIX/HOST-KEYWORD/IP-CIDR/IP6-CIDR，不带策略名）"""
-    return _write_text_list(domain_part, ipcidr_part, list_path, QX_FIELD_MAP, 'IP-CIDR', 'IP6-CIDR')
-
-
-def write_surge_list(domain_part, ipcidr_part, list_path):
-    """生成 Surge rule-set 格式的纯文本列表（DOMAIN/DOMAIN-SUFFIX/DOMAIN-KEYWORD/IP-CIDR/IP-CIDR6，不带策略名）"""
-    return _write_text_list(domain_part, ipcidr_part, list_path, SURGE_FIELD_MAP, 'IP-CIDR', 'IP-CIDR6')
-
-
 def unified_to_singbox_json(unified, json_path):
     result_rules = {"version": 2, "rules": []}
     for pattern in sorted(unified.keys()):
