@@ -1,9 +1,0 @@
-HOST,error-tracking.megamarket.tech
-HOST,metrics.21-school.ru
-HOST,sentry.sberauto.com
-HOST,tracing-http.megamarket.tech
-HOST,visor.sberbank.ru
-HOST-SUFFIX,ads.sber.ru
-HOST-SUFFIX,clickstream.sberbank.ru
-HOST-SUFFIX,neon.click
-HOST-SUFFIX,sbermarketing.ru
