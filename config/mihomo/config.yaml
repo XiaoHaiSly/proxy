@@ -1,25 +1,20 @@
-UA_T: &UA_T {type: http, interval: 21600, header: {User-Agent: ["clash-verge/v2.4.7"]}}
+UA_T: &UA_T {type: http, interval: 21600, header: {User-Agent: ["clash-meta"]}}
 proxy-providers:
-  Sub1:
+  sub1:
     <<: *UA_T
-    url: ""
-    path: ./providers/Sub1.yaml
-  Sub2:
+    url: "订阅链接"
+    path: ./providers/sub1.yaml
+  sub2:
     <<: *UA_T
-    url: ""
-    path: ./providers/Sub2.yaml    
+    url: "订阅链接"
+    path: ./providers/sub2.yaml    
 
-SUBS: &SUBS [Sub1, Sub2]
+SUBS: &SUBS [sub1, sub2]
 
-HEALTH_CHECK: &HEALTH_CHECK 
-  {enable: true, interval: 300, lazy: false, url: 'https://www.gstatic.com/generate_204', tolerance: 80, timeout: 5000}
-
+HEALTH_CHECK: &HEALTH_CHECK {enable: true, interval: 300, lazy: false, url: 'https://www.gstatic.com/generate_204', tolerance: 80, timeout: 5000}
 SELECT_T: &SELECT_T {type: select, use: *SUBS, <<: *HEALTH_CHECK}  
-
 AUTO_T: &AUTO_T {type: url-test, use: *SUBS, <<: *HEALTH_CHECK, hidden: true}
-
 FALLBACK_T: &FALLBACK_T {type: fallback, use: *SUBS, <<: *HEALTH_CHECK, hidden: true}
-
 OT_T: &OT_T '^(?i)(?!.*(香港|Hong Kong|Taiwan|台湾|TW|Japan|日本|JP|Singapore|新加坡|SG|America|美|US|United States|America|Korea|韩国|KR|UK|英国|United Kingdom|France|法国|\bFR\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|剩余|频道)).*$'
 
 mixed-port: 7890
@@ -29,14 +24,10 @@ allow-lan: true
 
 external-controller: "[::]:9090"
 external-ui: ui
-external-ui-url: "https://gh.445568.xyz/https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
+external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
 
 unified-delay: true
 tcp-concurrent: true
-find-process-mode: off
-
-keep-alive-idle: 300
-keep-alive-interval: 75
 
 profile:
   store-selected: true
@@ -73,8 +64,9 @@ dns:
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
   nameserver-policy:
-    "rule-set:cn": [dns.alidns.com]
+    "rule-set:private": ["system"]
     "rule-set:proxy": [https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀]
+    "rule-set:china": [https://dns.alidns.com/dns-query]
     
 hosts:
   dns.alidns.com: [223.5.5.5, 223.6.6.6]
@@ -127,16 +119,12 @@ rule-providers:
   google_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/google.mrs', path: ./ruleset/google_ip.mrs}
   ai: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/Ai.mrs', path: ./ruleset/ai.mrs}
   github: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/github.mrs', path: ./ruleset/github.mrs}
-  cn_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/china.mrs', path: ./ruleset/cn_ip.mrs}   
-  cn: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/china.mrs', path: ./ruleset/china-list.mrs}
+  china: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/china.mrs', path: ./ruleset/china-list.mrs}
+  china_ip: {<<: *i, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/ipcidr/china.mrs', path: ./ruleset/cn_ip.mrs}   
   proxy: {<<: *d, url: 'https://xiaohaisly.445568.xyz/rules/mihomo/domain/proxy.mrs', path: ./ruleset/proxy-list.mrs}
    
 rules: 
   - DOMAIN-SUFFIX,xyz,𝑪𝑯𝑰𝑵𝑨
-  - DOMAIN,a.nel.cloudflare.com,𝑪𝑯𝑰𝑵𝑨
-  - DOMAIN,challenges.cloudflare.com,𝑪𝑯𝑰𝑵𝑨
-  - DOMAIN,stun.cloudflare.com,𝑪𝑯𝑰𝑵𝑨
-  - DOMAIN,static.cloudflareinsights.com,𝑪𝑯𝑰𝑵𝑨
   - RULE-SET,private,𝑪𝑯𝑰𝑵𝑨
   - RULE-SET,private_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve
   - RULE-SET,ai,𝑨𝑰-𝑶𝒏𝒍𝒚
@@ -146,6 +134,6 @@ rules:
   - RULE-SET,telegram,𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
   - RULE-SET,telegram_ip,𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎,no-resolve
   - RULE-SET,proxy,𝑷𝑹𝑶𝑿𝒀
-  - RULE-SET,cn,𝑪𝑯𝑰𝑵𝑨
-  - RULE-SET,cn_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve
+  - RULE-SET,china,𝑪𝑯𝑰𝑵𝑨
+  - RULE-SET,china_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve
   - MATCH,𝑷𝑹𝑶𝑿𝒀
