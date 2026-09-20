@@ -174,61 +174,61 @@
         "tag": "ads_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/AWAvenue.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/AWAvenue.srs"
       },
       {
         "tag": "cn_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/ipcidr/china.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/ipcidr/china.srs"
       },
       {
         "tag": "cn_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/china.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/china.srs"
       },
       {
         "tag": "google_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/ipcidr/google.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/ipcidr/google.srs"
       },
       {
         "tag": "google_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/google.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/google.srs"
       },
       {
         "tag": "openai_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/Ai.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/Ai.srs"
       },
       {
         "tag": "proxy_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/proxy.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/proxy.srs"
       },
       {
         "tag": "telegram_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/ipcidr/telegram.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/ipcidr/telegraml.srs"
       },
       {
         "tag": "telegram_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/telegram.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/telegraml.srs"
       },
       {
         "tag": "youtube_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://xiaohaisly.445568.xyz/rules/singbox/domain/youtube.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/youtube.srs"
       }
     ],
     "final": "Final",
