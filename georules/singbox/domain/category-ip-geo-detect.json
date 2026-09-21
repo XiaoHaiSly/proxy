@@ -12,6 +12,7 @@
         "ipv4-check-perf.radar.cloudflare.com",
         "ipv6-check-perf.radar.cloudflare.com",
         "myip.dnsomatic.com",
+        "myip.happ.su",
         "whatismyip.akamai.com"
       ]
     },
@@ -40,6 +41,7 @@
         "curlmyip.net",
         "dadata.ru",
         "db-ip.com",
+        "dnscheck.tools",
         "dnsleaktest.com",
         "extreme-ip-lookup.com",
         "find-my-ip.com",
@@ -123,6 +125,8 @@
         "iplocation.com",
         "iplocation.io",
         "iplocation.net",
+        "iplogger.com",
+        "iplogger.org",
         "iplookup.it",
         "ipme.co",
         "ipme.in",
