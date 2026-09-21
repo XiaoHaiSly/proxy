@@ -63,6 +63,7 @@ payload:
 - +.fenbilantian.cn
 - +.fenbilantian.com
 - +.gaojidata.com
+- +.gaokao.cn
 - +.gaokao.com
 - +.gatzs.com.cn
 - +.gfbzb.cn
@@ -79,6 +80,7 @@ payload:
 - +.hjfile.cn
 - +.huatu.com
 - +.hugecore.net
+- +.huijiaoyun.com
 - +.hujiang.com
 - +.icourse163.org
 - +.icourses.cn
@@ -105,6 +107,7 @@ payload:
 - +.maimemo.com
 - +.maimemostatus.com
 - +.markji.com
+- +.mddclass.com
 - +.modex.com.cn
 - +.mojidict.com
 - +.mooc.cn
@@ -136,9 +139,11 @@ payload:
 - +.schoopia.com
 - +.shanbay.com
 - +.shareintelli.com
+- +.sksight.com
 - +.smartedu.cn
 - +.speiyou.com
 - +.sydw8.com
+- +.syh.zybang.com
 - +.tal.com
 - +.tesoon.com
 - +.tongxuepie.com
@@ -185,5 +190,8 @@ payload:
 - +.zuowenjun.com
 - +.zuowenku.net
 - +.zuowenwang.net
+- +.zuoyebang.cc
+- +.zuoyebang.com
 - +.zxxk.com
+- +.zybang.com
 - +.zysn.net

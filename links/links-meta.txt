@@ -328,6 +328,7 @@ category-ecommerce https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/me
 category-ecommerce@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ecommerce@ads.yaml
 category-ecommerce@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ecommerce@cn.yaml
 category-education-cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-education-cn.yaml
+category-education-cn@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-education-cn@ads.yaml
 category-education-ir https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-education-ir.yaml
 category-education-ru https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-education-ru.yaml
 category-electronic-cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-electronic-cn.yaml
@@ -735,6 +736,7 @@ fox https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/
 fqnovel https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fqnovel.yaml
 fqnovel@ads https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fqnovel@ads.yaml
 framer https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/framer.yaml
+freebuff https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/freebuff.yaml
 freecodecamp https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/freecodecamp.yaml
 freenode https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/freenode.yaml
 ft https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ft.yaml

@@ -300,9 +300,10 @@ payload:
 - fbcdn-a.akamaihd.net
 - fides-pol.apple.com
 - firebase-settings.crashlytics.com
-- firebase.google.com
 - firebase.googleapis.com
 - firebaseappcheck.googleapis.com
+- firebaseappdistribution.googleapis.com
+- firebaseapptesters.googleapis.com
 - firebasedynamiclinks-ipv4.googleapis.com
 - firebasedynamiclinks-ipv6.googleapis.com
 - firebasedynamiclinks.googleapis.com
@@ -4023,9 +4024,11 @@ payload:
 - +.findmyipad.com
 - +.fiotolia.com
 - +.firebase.com
+- +.firebase.dev
 - +.firebase.io
 - +.firebaseapp.com
 - +.firebaseio.com
+- +.firefox-portal-detection.com
 - +.firefox.com
 - +.firefox.hu
 - +.firefoxtweetmachine.com
@@ -7493,6 +7496,7 @@ payload:
 - +.terragraph.com
 - +.tetrika-school.ru
 - +.texture.com
+- +.tfbnw.net
 - +.tfhub.dev
 - +.tfsallin.net
 - +.th.bing.com
