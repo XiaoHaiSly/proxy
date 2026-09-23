@@ -90,6 +90,7 @@ amazon@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/ge
 amazontrust https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazontrust.yaml
 amc https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amc.yaml
 amd https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amd.yaml
+amd@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amd@cn.yaml
 amp https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amp.yaml
 amp@cn https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amp@cn.yaml
 amplitude https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amplitude.yaml
