@@ -1219,6 +1219,7 @@ newsmax https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geos
 nexitally https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nexitally.yaml
 nexo https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nexo.yaml
 nexon https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nexon.yaml
+nexusmods https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nexusmods.yaml
 nga https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nga.yaml
 nginx https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nginx.yaml
 ngrok https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ngrok.yaml
@@ -1503,6 +1504,7 @@ slack https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosit
 slideshare https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/slideshare.yaml
 sling https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sling.yaml
 smartone https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/smartone.yaml
+smena https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/smena.yaml
 smtiaojiaoshi https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/smtiaojiaoshi.yaml
 smzdm https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/smzdm.yaml
 snap https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/snap.yaml
