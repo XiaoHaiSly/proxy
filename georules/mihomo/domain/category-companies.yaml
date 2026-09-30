@@ -323,6 +323,8 @@ payload:
 - g1.gstatic.com
 - g2.gstatic.com
 - g3.gstatic.com
+- geminiweb-pa.clients.google.com
+- geminiweb-pa.clients6.google.com
 - gigabyte2.azureedge.net
 - github-api.arkoselabs.com
 - github-cloud.s3.amazonaws.com
@@ -5954,6 +5956,7 @@ payload:
 - +.messengerdevelopers.com
 - +.meta.ai
 - +.meta.com
+- +.metaaivm.com
 - +.metabora.io
 - +.metacloud.com
 - +.metamind.io
@@ -6331,6 +6334,7 @@ payload:
 - +.mtsmedia.ru
 - +.mudbox3d.com
 - +.multiplydiversity.com
+- +.muse.ai
 - +.musickit.net
 - +.musixmatch.com
 - +.muumuu-domain.com
