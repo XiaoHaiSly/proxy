@@ -15,12 +15,13 @@ HC_T: &HC_T {enable: true, interval: 300, lazy: false, url: 'https://www.gstatic
 SE_T: &SE_T {type: select, use: *SUB_T, <<: *HC_T}
 AT_T: &AT_T {type: url-test, use: *SUB_T, <<: *HC_T, hidden: true}
 FB_T: &FB_T {type: fallback, use: *SUB_T, <<: *HC_T, hidden: true}
+
 HK_T: &HK_T '(?i)港|HK|Hong Kong'
 JP_T: &JP_T '(?i)日本|东京|大阪|JP|Japan'
 SG_T: &SG_T '(?i)新加坡|坡|SG|狮城|Singapore'
 US_T: &US_T '(?i)美|US|United States|America'
 EU_T: &EU_T '(?i)UK|英国|United Kingdom|France|法国|\bFR\b|Germany|德国|DE|Netherlands|荷兰|NL'
-OT_T: &OT_T '^(?i)(?!.*(香港|Hong Kong|Japan|日本|JP|Singapore|新加坡|SG|America|美|US|United States|America|UK|英国|United Kingdom|France|法国|\bFR\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|剩余|频道)).*$'
+OT_T: &OT_T '^(?i)(?!.*(香港|Hong Kong|Japan|日本|JP|Singapore|新加坡|狮城|SG|America|美|US|United States|America|UK|英国|United Kingdom|France|法国|\bFR\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|到期|套餐|剩余|频道)).*$'
 
 mixed-port: 7890
 log-level: error
@@ -40,7 +41,7 @@ profile:
 
 tun:
   enable: true
-  stack: system
+  stack: mixed
   device: Nikki
   dns-hijack:
     - "udp://any:53"
@@ -112,21 +113,21 @@ proxy-groups:
 - {name: 𝑶𝑻-𝑨𝑼𝑻𝑶, <<: *AT_T, filter: *OT_T}
 - {name: 𝑶𝑻-𝑭𝑨𝑳𝑳, <<: *FB_T, filter: *OT_T}
 
-_default_mrs_domain: &d {type: http, behavior: domain, format: mrs, interval: 86400}
-_default_mrs_ip: &i {type: http, behavior: ipcidr, format: mrs, interval: 86400}
+DM_T: &DM_T {type: http, behavior: domain, format: mrs, interval: 86400}
+IP_T: &IP_T {type: http, behavior: ipcidr, format: mrs, interval: 86400}
 
 rule-providers:
-  private: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs', path: ./ruleset/private.mrs}
-  private_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs', path: ./ruleset/private_ip.mrs}
-  telegram: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs', path: ./ruleset/telegram.mrs}
-  telegram_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs', path: ./ruleset/telegram_ip.mrs}
-  google: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs', path: ./ruleset/google.mrs}
-  google_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs', path: ./ruleset/google_ip.mrs}
-  ai: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs', path: ./ruleset/ai.mrs}
-  github: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs', path: ./ruleset/github.mrs}
-  china: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs', path: ./ruleset/china-list.mrs}
-  china_ip: {<<: *i, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs', path: ./ruleset/cn_ip.mrs}
-  proxy: {<<: *d, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs', path: ./ruleset/proxy-list.mrs}
+  private: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs', path: ./ruleset/private.mrs}
+  private_ip: {<<: *IP_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs', path: ./ruleset/private_ip.mrs}
+  telegram: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs', path: ./ruleset/telegram.mrs}
+  telegram_ip: {<<: *IP_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs', path: ./ruleset/telegram_ip.mrs}
+  google: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs', path: ./ruleset/google.mrs}
+  google_ip: {<<: *IP_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs', path: ./ruleset/google_ip.mrs}
+  ai: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs', path: ./ruleset/ai.mrs}
+  github: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs', path: ./ruleset/github.mrs}
+  china: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs', path: ./ruleset/china.mrs}
+  china_ip: {<<: *IP_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs', path: ./ruleset/china_ip.mrs}
+  proxy: {<<: *DM_T, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs', path: ./ruleset/proxy.mrs}
 
 rules:
   - DOMAIN-SUFFIX,xyz,𝑪𝑯𝑰𝑵𝑨
