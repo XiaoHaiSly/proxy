@@ -65,8 +65,8 @@ dns:
     - https://dns.alidns.com/dns-query
   nameserver-policy:
     "rule-set:private": ["system"]
-    "rule-set:proxy": [https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀]
-    "rule-set:china": [https://dns.alidns.com/dns-query]
+    "rule-set:proxy": ["https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀"]
+    "rule-set:china": ["https://dns.alidns.com/dns-query"]
     
 hosts:
   dns.alidns.com: [223.5.5.5, 223.6.6.6]
