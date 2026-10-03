@@ -62,7 +62,7 @@ function main(config) {
   const SELECT_T = { type: "select", ...HEALTH_CHECK, "include-all": true };
   const AUTO_T = { type: "url-test", ...HEALTH_CHECK, hidden: true, "include-all": true };
   const FALLBACK_T = { type: "fallback", ...HEALTH_CHECK, hidden: true, "include-all": true };
-  const OT_T = "^(?i)(?!.*(香港|Hong Kong|Taiwan|台湾|TW|Japan|日本|JP|Singapore|新加坡|SG|America|美|US|United States|America|Korea|韩国|KR|UK|英国|United Kingdom|France|法国|\\\\bFR\\\\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|剩余|频道)).*$";
+  const OT_T = "^(?i)(?!.*(香港|Hong Kong|Japan|日本|JP|Singapore|新加坡|狮城|SG|America|美|US|United States|America|UK|英国|United Kingdom|France|法国|\\\\bFR\\\\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|剩余|频道)).*$";
 
   config["proxy-groups"] = [
     { name: "𝑯𝑲 𝑵𝒐𝒅𝒆", ...SELECT_T, filter: "(?i)港|HK|Hong Kong", proxies: ["𝑯𝑲-𝑨𝑼𝑻𝑶", "𝑯𝑲-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png" },
