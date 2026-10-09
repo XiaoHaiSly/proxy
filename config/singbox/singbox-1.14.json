@@ -204,7 +204,7 @@
         "tag": "openai_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/Ai.srs"
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/XiaoHaiSly/proxy/refs/heads/main/rules/singbox/domain/ai.srs"
       },
       {
         "tag": "proxy_domain",
