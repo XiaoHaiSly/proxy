@@ -1,0 +1,150 @@
+function main(config) {
+  config = config || {};
+
+  Object.assign(config, {
+    "mixed-port": 7890,
+    "log-level": "error",
+    "ipv6": true,
+    "allow-lan": true,
+    "external-controller": "[::]:9090",
+    "external-ui": "ui",
+    "external-ui-url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip",
+    "unified-delay": true,
+    "tcp-concurrent": true,
+  });
+
+  const HC_T = { enable: true, interval: 300, lazy: false, url: "https://www.gstatic.com/generate_204", tolerance: 80, timeout: 5000 };
+  const SE_T = { type: "select", ...HC_T, "include-all": true };
+  const AT_T = { type: "url-test", ...HC_T, hidden: true, "include-all": true };
+  const FB_T = { type: "fallback", ...HC_T, hidden: true, "include-all": true };
+
+  const HK_T = "(?i)港|HK|Hong Kong";
+  const JP_T = "(?i)日本|东京|大阪|JP|Japan";
+  const SG_T = "(?i)新加坡|坡|SG|狮城|Singapore";
+  const US_T = "(?i)美|US|United States|America";
+  const EU_T = "(?i)UK|英国|United Kingdom|France|法国|\\bFR\\b|Germany|德国|DE|Netherlands|荷兰|NL";
+  const OT_T = "^(?i)(?!.*(香港|Hong Kong|Japan|日本|JP|Singapore|新加坡|狮城|SG|America|美|US|United States|America|UK|英国|United Kingdom|France|法国|\\bFR\\b|Germany|德国|DE|Netherlands|荷兰|NL|𝑺𝒕𝒂𝒄𝒌|𝑭𝒊𝒓𝒔𝒕|群|官网|流量|到期|套餐|剩余|频道)).*$";
+
+  config["profile"] = {
+    "store-selected": true,
+    "store-fake-ip": true
+  };
+
+  config["tun"] = {
+    "enable": true,
+    "stack": "mixed",
+    "device": "Nikki",
+    "dns-hijack": ["udp://any:53", "tcp://any:53"],
+    "auto-route": true,
+    "auto-redirect": true,
+    "auto-detect-interface": true,
+    "disable-icmp-forwarding": true
+  };
+
+  config["sniffer"] = {
+    "enable": true,
+    "sniff": {
+      "TLS": { "ports": [443, 8443] },
+      "HTTP": { "ports": [80, "8080-8880"] },
+      "QUIC": { "ports": [443, 8443] }
+    },
+    "skip-domain": [
+      "Mijia Cloud",
+      "+.push.apple.com"
+    ]
+  };
+
+  config["dns"] = {
+    "enable": true,
+    "ipv6": true,
+    "cache-algorithm": "arc",
+    "listen": "[::]:1053",
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
+    "fake-ip-filter": ["+.lan", "+.local", "rule-set:private"],
+    "default-nameserver": ["223.5.5.5"],
+    "nameserver": ["https://doh.pub/dns-query"],
+    "proxy-server-nameserver": ["https://dns.alidns.com/dns-query"],
+    "nameserver-policy": {
+      "rule-set:private": ["system"],
+      "rule-set:proxy": ["https://dns.google/dns-query#𝑷𝑹𝑶𝑿𝒀"],
+      "rule-set:bytedance": ["180.184.1.1", "180.184.2.2"],
+      "rule-set:china": ["https://dns.alidns.com/dns-query"]
+    }
+  };
+
+  config["hosts"] = {
+    "dns.alidns.com": ["223.5.5.5", "223.6.6.6"],
+    "doh.pub": ["1.12.12.12", "120.53.53.53"],
+    "dns.google": ["8.8.8.8", "8.8.4.4"]
+  };
+
+  config["proxies"] = (config["proxies"] || []).concat([
+    { name: "𝑰𝑷𝒗𝟒 𝑭𝒊𝒓𝒔𝒕", type: "direct", "ip-version": "ipv4-prefer" },
+    { name: "𝑰𝑷𝒗𝟔 𝑭𝒊𝒓𝒔𝒕", type: "direct", "ip-version": "ipv6-prefer" },
+    { name: "𝑫𝒖𝒂𝒍 𝑺𝒕𝒂𝒄𝒌", type: "direct" }
+  ]);
+
+  config["proxy-groups"] = [
+    { name: "𝑯𝑲 𝑵𝒐𝒅𝒆", ...SE_T, filter: HK_T, proxies: ["𝑯𝑲-𝑨𝑼𝑻𝑶", "𝑯𝑲-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/hk.png" },
+    { name: "𝑱𝑷 𝑵𝒐𝒅𝒆", ...SE_T, filter: JP_T, proxies: ["𝑱𝑷-𝑨𝑼𝑻𝑶", "𝑱𝑷-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/jp.png" },
+    { name: "𝑺𝑮 𝑵𝒐𝒅𝒆", ...SE_T, filter: SG_T, proxies: ["𝑺𝑮-𝑨𝑼𝑻𝑶", "𝑺𝑮-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/sg.png" },
+    { name: "𝑼𝑺 𝑵𝒐𝒅𝒆", ...SE_T, filter: US_T, proxies: ["𝑼𝑺-𝑨𝑼𝑻𝑶", "𝑼𝑺-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/us.png" },
+    { name: "𝑬𝑼 𝑵𝒐𝒅𝒆", ...SE_T, filter: EU_T, proxies: ["𝑬𝑼-𝑨𝑼𝑻𝑶", "𝑬𝑼-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/EuropeanUnion(2).png" },
+    { name: "𝑶𝑻 𝑵𝒐𝒅𝒆", ...SE_T, filter: OT_T, proxies: ["𝑶𝑻-𝑨𝑼𝑻𝑶", "𝑶𝑻-𝑭𝑨𝑳𝑳"], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png" },
+    { name: "𝑨𝑰-𝑶𝒏𝒍𝒚", type: "select", ...HC_T, proxies: ["𝑱𝑷 𝑵𝒐𝒅𝒆", "𝑺𝑮 𝑵𝒐𝒅𝒆", "𝑯𝑲 𝑵𝒐𝒅𝒆", "𝑼𝑺 𝑵𝒐𝒅𝒆", "𝑬𝑼 𝑵𝒐𝒅𝒆", "𝑶𝑻 𝑵𝒐𝒅𝒆"], icon: "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png" },
+    { name: "𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎", type: "select", ...HC_T, proxies: ["𝑱𝑷 𝑵𝒐𝒅𝒆", "𝑺𝑮 𝑵𝒐𝒅𝒆", "𝑯𝑲 𝑵𝒐𝒅𝒆", "𝑼𝑺 𝑵𝒐𝒅𝒆", "𝑬𝑼 𝑵𝒐𝒅𝒆", "𝑶𝑻 𝑵𝒐𝒅𝒆"], icon: "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/Telegrampremium.png" },
+    { name: "𝑪𝑯𝑰𝑵𝑨", type: "select", ...HC_T, proxies: ["𝑫𝒖𝒂𝒍 𝑺𝒕𝒂𝒄𝒌", "𝑰𝑷𝒗𝟒 𝑭𝒊𝒓𝒔𝒕", "𝑰𝑷𝒗𝟔 𝑭𝒊𝒓𝒔𝒕"], url: "https://connectivitycheck.platform.hicloud.com/generate_204", interval: 600, lazy: false, icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China_Map.png" },
+    { name: "𝑷𝑹𝑶𝑿𝒀", type: "select", ...HC_T, proxies: ["𝑱𝑷 𝑵𝒐𝒅𝒆", "𝑺𝑮 𝑵𝒐𝒅𝒆", "𝑯𝑲 𝑵𝒐𝒅𝒆", "𝑼𝑺 𝑵𝒐𝒅𝒆", "𝑬𝑼 𝑵𝒐𝒅𝒆", "𝑶𝑻 𝑵𝒐𝒅𝒆"], icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/World_Map.png" },
+
+    { name: "𝑯𝑲-𝑨𝑼𝑻𝑶", ...AT_T, filter: HK_T },
+    { name: "𝑯𝑲-𝑭𝑨𝑳𝑳", ...FB_T, filter: HK_T },
+    { name: "𝑱𝑷-𝑨𝑼𝑻𝑶", ...AT_T, filter: JP_T },
+    { name: "𝑱𝑷-𝑭𝑨𝑳𝑳", ...FB_T, filter: JP_T },
+    { name: "𝑺𝑮-𝑨𝑼𝑻𝑶", ...AT_T, filter: SG_T },
+    { name: "𝑺𝑮-𝑭𝑨𝑳𝑳", ...FB_T, filter: SG_T },
+    { name: "𝑼𝑺-𝑨𝑼𝑻𝑶", ...AT_T, filter: US_T },
+    { name: "𝑼𝑺-𝑭𝑨𝑳𝑳", ...FB_T, filter: US_T },
+    { name: "𝑬𝑼-𝑨𝑼𝑻𝑶", ...AT_T, filter: EU_T },
+    { name: "𝑬𝑼-𝑭𝑨𝑳𝑳", ...FB_T, filter: EU_T },
+    { name: "𝑶𝑻-𝑨𝑼𝑻𝑶", ...AT_T, filter: OT_T },
+    { name: "𝑶𝑻-𝑭𝑨𝑳𝑳", ...FB_T, filter: OT_T }
+  ];
+
+  const DM_T = { type: "http", behavior: "domain", format: "mrs", interval: 86400 };
+  const IP_T = { type: "http", behavior: "ipcidr", format: "mrs", interval: 86400 };
+  const M = "";
+
+  config["rule-providers"] = {
+    "private": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs", path: "./ruleset/private.mrs" },
+    "private_ip": { ...IP_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs", path: "./ruleset/private_ip.mrs" },
+    "telegram": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs", path: "./ruleset/telegram.mrs" },
+    "telegram_ip": { ...IP_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs", path: "./ruleset/telegram_ip.mrs" },
+    "google": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs", path: "./ruleset/google.mrs" },
+    "google_ip": { ...IP_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs", path: "./ruleset/google_ip.mrs" },
+    "ai": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs", path: "./ruleset/ai.mrs" },
+    "github": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs", path: "./ruleset/github.mrs" },
+    "china": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs", path: "./ruleset/china.mrs" },
+    "china_ip": { ...IP_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs", path: "./ruleset/china_ip.mrs" },
+    "proxy": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs", path: "./ruleset/proxy.mrs" },
+    "bytedance": { ...DM_T, url: M + "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bytedance.mrs", path: "./ruleset/bytedance.mrs" }
+  };
+
+  config["rules"] = [
+    "DOMAIN-SUFFIX,xyz,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,private,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,private_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve",
+    "RULE-SET,ai,𝑨𝑰-𝑶𝒏𝒍𝒚",
+    "RULE-SET,github,𝑷𝑹𝑶𝑿𝒀",
+    "RULE-SET,google,𝑷𝑹𝑶𝑿𝒀",
+    "RULE-SET,google_ip,𝑷𝑹𝑶𝑿𝒀,no-resolve",
+    "RULE-SET,telegram,𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎",
+    "RULE-SET,telegram_ip,𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎,no-resolve",
+    "RULE-SET,proxy,𝑷𝑹𝑶𝑿𝒀",
+    "RULE-SET,china,𝑪𝑯𝑰𝑵𝑨",
+    "RULE-SET,china_ip,𝑪𝑯𝑰𝑵𝑨,no-resolve",
+    "MATCH,𝑷𝑹𝑶𝑿𝒀"
+  ];
+
+  return config;
+}
